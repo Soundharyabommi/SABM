@@ -21,7 +21,7 @@ int pin_change(int attempt)
          b=atoi(string);
      }
      fclose(fPtr);
-     fPtr=fopen("c:\\cfile\\password.txt","r+");
+     fPtr=fopen("datafolder/password.txt","r+");
      int existingPinCmp;
      if(a==b)
         existingPinCmp=0;
