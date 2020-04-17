@@ -1,0 +1,3 @@
+Amount to withdraw = 400Balance in chequing = 600.000000
+Amount deposited=100Amount to withdraw = 45Balance in chequing = 955.000000
+Amount deposited=9
