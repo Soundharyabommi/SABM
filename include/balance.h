@@ -1,5 +1,5 @@
-
 /**
+ * @file balance.h
  * @brief displays the current balance of chequing and savings accounts
  */
 #ifndef __BALANCE_H__

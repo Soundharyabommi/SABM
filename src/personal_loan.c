@@ -1,15 +1,9 @@
 #include<stdio.h>
-#include<conio.h>
-#include<math.h>
-#include<stdlib.h>
-#include "balance.h"
-#include "global.h"
-//start of check balance function
-void balance(){
-
-    printf("\nYour balance in chequing account is: %f", balanceInChequing);
-    printf("\nYour balance in savings account is: %f", balanceInSaving);
-    int another_transaction;
+#include "personal_loan.h"
+void personal_loan(){
+  printf("\nThanks! Your request for personal loan has been placed.");
+  printf("\nNote: You will be contacted from the bank shortly\n");
+  int another_transaction;
     printf("\n Do you want to continue transaction? Press 1 to continue and 2 to exit");
     scanf("%d",&another_transaction);
     if((another_transaction==1)||(another_transaction==2))
@@ -24,5 +18,5 @@ void balance(){
     printf("Invalid choice");
     exit(0);
       }
-}//end of check balance function
+  }
 

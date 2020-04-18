@@ -1,7 +1,6 @@
 /**
  * @file currency_transfer.h
- * @brief The function transfers the amount between chequing and savings account
- * and writes the transfer history to the file.
+ * @brief The function transfers the amount between chequing and savings account and writes the transfer history to the file.
  */
 
 #ifndef __CURRENCY_TRANSFER_H__
