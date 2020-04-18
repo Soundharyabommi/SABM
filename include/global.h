@@ -1,9 +1,10 @@
-/**@file globals.h
- *@brief contains declarations for globals for withdraw
-*/
+/**
+ *@file global.h
+ *@brief contains declarations for globals used in the program
+ */
 
-#ifndef __GLOBALS_H__
-#define __GLOBALS_H__
+#ifndef __GLOBAL_H__
+#define __GLOBAL_H__
 
 float balanceInChequing = 1000;
 float balanceInSaving = 1000;

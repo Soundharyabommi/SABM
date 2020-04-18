@@ -1,7 +1,6 @@
 /**
  * @file transaction_history.h
- * @brief prints the withdrawal and deposit transactions summary that is it
- * displays the contents of the file.
+ * @brief prints the withdrawal and deposit transactions summary that is it displays the contents of the file.
  */
 
 #ifndef __TRANSACTION_HISTORY_H__
