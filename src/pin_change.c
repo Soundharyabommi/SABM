@@ -3,8 +3,8 @@
 #include<ctype.h>
 #include<math.h>
 #include<stdlib.h>
-#include"pin_change.h"
-#include "globals.h"
+#include "pin_change.h"
+#include "global.h"
 int pin_change(int attempt)
 {
     FILE *fPtr;
@@ -70,14 +70,26 @@ int pin_change(int attempt)
             attempt--;
             if(attempt==0){
                 printf("\nSorry, You have exceeded the number of times that you need to input the correct password");
-                attempt=4;}
+                attempt=4;
+                exit(0);}
             pin_change(attempt);}
     }
-            else
-            {
-                printf("\nThanks for using our SABM service");
-                return 0;
-            }
+    int another_transaction;
+    printf("\n Do you want to continue transaction? Press 1 to continue and 2 to exit");
+    scanf("%d",&another_transaction);
+    if((another_transaction==1)||(another_transaction==2))
+    {
+        if(another_transaction==1){
+           int t1=transaction();
+           switch_statement(t1);
+        } else {
+        exit(0);
+        }
+    } else {
+    printf("Invalid choice");
+    exit(0);
+      }
+
        return 0;
      }
 
