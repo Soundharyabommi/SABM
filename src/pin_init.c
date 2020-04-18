@@ -2,8 +2,8 @@
 #include<string.h>
 #include<stdlib.h>
 #include <ctype.h>
-#include"pin_init.h"
-#include "globals.h"
+#include "pin_init.h"
+#include "global.h"
 int pin_init(int counter)
 {
     int a,b;
@@ -37,6 +37,7 @@ int pin_init(int counter)
             if(counter==0){
                 printf("\nSorry, You have exceeded the number of times that you need to input the correct password");
                 printf("\nThe system is temporarily confiscated\n");
-                counter=4;}
+                counter=4;
+                exit(0);}
             pin_init(counter);}}
 }

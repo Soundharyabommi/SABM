@@ -1,8 +1,6 @@
-
 /**
  * @file withdraw.h
- * @brief stores the withdrawal operation done by the user to the file
- * The function performs withdrawal operation
+ * @brief performs withdrawal and stores the withdrawal operation done by the user to the file.
  */
 #ifndef __WITHDRAW_H__
 #define __WITHDRAW_H__
