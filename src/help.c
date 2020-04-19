@@ -1,10 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include "../include/cheque_book_request.h"
+#include "../include/help.h"
 
-void cheque_book_request(){
-  printf("\nThanks! Cheque book request has been placed.");
-  printf("\nNote: The bank will be notified shortly. The cheque book will be couriered to your registered address.");
+void help(){
+  printf("\nThanks! Your request for help has been placed.");
+  printf("\nNote: You will be contacted from the bank shortly");
   int another_transaction;
     printf("\n Do you want to continue transaction? Press 1 to continue and 2 to exit");
     scanf("%d",&another_transaction);

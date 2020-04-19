@@ -1,11 +1,15 @@
 #include<stdio.h>
+#include<conio.h>
+#include<math.h>
 #include<stdlib.h>
-#include "../include/cheque_book_request.h"
+#include "../include/balance.h"
+#include "../include/global.h"
+//start of check balance function
+void balance(){
 
-void cheque_book_request(){
-  printf("\nThanks! Cheque book request has been placed.");
-  printf("\nNote: The bank will be notified shortly. The cheque book will be couriered to your registered address.");
-  int another_transaction;
+    printf("\nYour balance in chequing account is: %f", balanceInChequing);
+    printf("\nYour balance in savings account is: %f", balanceInSaving);
+    int another_transaction;
     printf("\n Do you want to continue transaction? Press 1 to continue and 2 to exit");
     scanf("%d",&another_transaction);
     if((another_transaction==1)||(another_transaction==2))
@@ -20,5 +24,5 @@ void cheque_book_request(){
     printf("Invalid choice");
     exit(0);
       }
-  }
+}//end of check balance function
 

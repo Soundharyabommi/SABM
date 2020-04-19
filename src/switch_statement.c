@@ -3,8 +3,8 @@
 #include<stdlib.h>
 #include<math.h>
 #include<ctype.h>
-#include "switch_statement.h"
-#include "global.h"
+#include "../include/switch_statement.h"
+#include "../include/global.h"
 
 int switch_statement(int c)
 {
