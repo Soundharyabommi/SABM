@@ -2,8 +2,8 @@
 #include<string.h>
 #include<stdlib.h>
 #include <ctype.h>
-#include "pin_init.h"
-#include "global.h"
+#include "../include/pin_init.h"
+#include "../include/global.h"
 int pin_init(int counter)
 {
     int a,b;
@@ -15,7 +15,7 @@ int pin_init(int counter)
         scanf("%s",&PIN);
         a=atoi(PIN);
         FILE *fPtr;
-        fPtr=fopen("datafolder/password.txt","r");
+        fPtr=fopen("../datafolder/password.txt","r");
         if(fPtr==NULL){
         printf("not exist");
         exit(EXIT_FAILURE);

@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-#include "currency_exchange.h"
+#include "../include/currency_exchange.h"
 
 int currency_exchange( int cash,char *type)
  {
@@ -12,7 +12,7 @@ int currency_exchange( int cash,char *type)
     FILE *fpr;
     char str[100];
     //mkdir("c:\\cfile");
-    fpr=fopen("datafolder/conversion.txt","r");
+    fpr=fopen("../datafolder/conversion.txt","r");
      //open the file to display the contents
     //the file will contain the history of withdrawal and deposit made
     if(fpr==NULL){

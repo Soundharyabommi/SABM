@@ -1,19 +1,21 @@
     #include<stdio.h>
     #include<math.h>
     #include<stdlib.h>
-    #include "currency_transfer.h"
-    #include "global.h"
+    #include "../include/currency_transfer.h"
+    #include "../include/global.h"
+    #include "../include/transaction.h"
+#include "../include/switch_statement.h"
      //Transfer funds between chequing and savings
-    // float balanceInChequing = 1000;
-     //float balanceInSaving = 1000;
-
+     float balanceInChequing;
+     float balanceInSaving;
      void currency_transfer(){
+
      unsigned int amountToTransfer;
      int fromAccountChoice;
      int toAccountChoice;
      FILE *fPtr;
     //mkdir("c:\\cfile");
-     fPtr=fopen("datafolder/data.txt","a");
+     fPtr=fopen("../datafolder/data.txt","a");
      if(fPtr==NULL){
         printf("not exist");
         exit(EXIT_FAILURE);
@@ -63,6 +65,8 @@
       else{
         printf("\nPlease enter a valid choice");
       }
+      fflush(stdin);
+      fclose(fPtr);
     int another_transaction;
     printf("\n Do you want to continue transaction? Press 1 to continue and 2 to exit");
     scanf("%d",&another_transaction);

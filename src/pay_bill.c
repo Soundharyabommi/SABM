@@ -1,18 +1,21 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include "pay_bill.h"
-#include "global.h"
+#include "../include/pay_bill.h"
+#include "../include/global.h"
+#include "../include/transaction.h"
+#include "../include/switch_statement.h"
 
 //assuming that the credit card number, electricity bill number and mobile number already exist in the bank record
 
 int pay_bill()
 {
+
     int choice;
     printf("\nPlease choose your option for bill payment  \n 1.Credit Card Bill  \t 2.Electricity Bill  \t   3.Mobile Bill\n");
     scanf("%d",&choice);
     FILE *fPtr;
     //mkdir("c:\\cfile");
-    fPtr=fopen("datafolder/data.txt","a");
+    fPtr=fopen("../datafolder/data.txt","a");
     if(fPtr==NULL){
         printf("not exist");
         exit(EXIT_FAILURE);
@@ -57,6 +60,8 @@ int pay_bill()
      } else {
      printf("\nInvalid Choice");
        }
+       fflush(stdin);
+       fclose(fPtr);
     int another_transaction;
     printf("\n Do you want to continue transaction? Press 1 to continue and 2 to exit");
     scanf("%d",&another_transaction);
@@ -72,6 +77,7 @@ int pay_bill()
     printf("Invalid choice");
     exit(0);
       }
+
        return 0;
 }
 

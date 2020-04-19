@@ -6,7 +6,6 @@
 #ifndef __GLOBAL_H__
 #define __GLOBAL_H__
 
-float balanceInChequing = 1000;
-float balanceInSaving = 1000;
-float dailyLimit=500;
+extern float balanceInChequing ;
+extern float balanceInSaving ;
 #endif

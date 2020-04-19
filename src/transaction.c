@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<conio.h>
-#include "transaction.h"
-#include "global.h"
+#include "../include/transaction.h"
+#include "../include/global.h"
 
 int transaction(){
     int choice;
