@@ -1,5 +1,6 @@
 #include<stdio.h>
-#include "help.h"
+#include<stdlib.h>
+#include "../include/help.h"
 
 void help(){
   printf("\nThanks! Your request for help has been placed.");

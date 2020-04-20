@@ -2,8 +2,8 @@
 #include<conio.h>
 #include<math.h>
 #include<stdlib.h>
-#include "balance.h"
-#include "global.h"
+#include "../include/balance.h"
+#include "../include/global.h"
 //start of check balance function
 void balance(){
 

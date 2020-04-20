@@ -2,18 +2,20 @@
 #include<conio.h>
 #include<math.h>
 #include<stdlib.h>
-#include "withdraw.h"
-#include "global.h"
+#include "../include/withdraw.h"
+#include "../include/global.h"
+#include "../include/transaction.h"
+#include "../include/switch_statement.h"
 
-//float balanceInChequing = 1000;
-//float balanceInSaving = 1000;
-//float dailyLimit=500
+float  balanceInChequing =1000;
+float balanceInSaving =1000;
     int withdraw()
     {
     int amountToWidthdraw;
+float dailyLimit =500;
     FILE *fPtr;
     //mkdir("c:\\cfile");
-    fPtr=fopen("datafolder/data.txt","a");
+    fPtr=fopen("../datafolder/data.txt","a");
     if(fPtr==NULL){
         printf("not exist");
         exit(EXIT_FAILURE);
@@ -72,6 +74,8 @@
         printf("\n Invalid account choice");
         withdraw();
     }// end of else for choice
+    fflush(stdin);
+    fclose(fPtr);
     int another_transaction;
     printf("\n Do you want to continue transaction? Press 1 to continue and 2 to exit");
     scanf("%d",&another_transaction);
@@ -87,7 +91,7 @@
     printf("Invalid choice");
     exit(0);
       }
-
+	return 0;
     }//end of withdraw
 
 

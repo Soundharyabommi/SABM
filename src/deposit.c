@@ -2,16 +2,17 @@
 #include<conio.h>
 #include<math.h>
 #include<stdlib.h>
-#include "deposit.h"
-#include "global.h"
+#include "../include/deposit.h"
+#include "../include/global.h"
+#include "../include/transaction.h"
+#include "../include/switch_statement.h"
 
-//float balanceInChequing = 1000;
-//float balanceInSaving = 1000;
 int deposit(){
+
     int amountToDeposit;
     FILE *fPtr;
     //mkdir("c:\\cfile");
-    fPtr=fopen("datafolder/data.txt","a");
+    fPtr=fopen("../datafolder/data.txt","a");
     if(fPtr==NULL){
         printf("not exist");
         exit(EXIT_FAILURE);
@@ -47,6 +48,8 @@ int deposit(){
         printf("\nInvalid payment choice");
         deposit();
       }//end of else for payment choice
+        fflush(stdin);
+        fclose(fPtr);
     int another_transaction;
     printf("\n Do you want to continue transaction? Press 1 to continue and 2 to exit");
     scanf("%d",&another_transaction);
@@ -62,5 +65,6 @@ int deposit(){
     printf("Invalid choice");
     exit(0);
       }
+    return 0;
 }//end of deposit
 

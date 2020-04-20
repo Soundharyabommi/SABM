@@ -3,8 +3,8 @@
 #include<stdlib.h>
 #include<math.h>
 #include<ctype.h>
-#include "functions.h"
-#include "global.h"
+#include "../include/functions.h"
+#include "../include/global.h"
 
 int main()
 {
