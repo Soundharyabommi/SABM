@@ -12,7 +12,7 @@ float balanceInSaving =1000;
     int withdraw()
     {
     int amountToWidthdraw;
-float dailyLimit =500;
+    float dailyLimit =500;
     FILE *fPtr;
     //mkdir("c:\\cfile");
     fPtr=fopen("../datafolder/data.txt","a");

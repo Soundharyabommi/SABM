@@ -17,3 +17,5 @@ Amount to withdraw = 41Balance in chequing = 959.000000
 
 Amount transferred=50 and The current balance of chequing account is 12161.000000 and saving account is 950.000000Amount deposited=11111Amount to withdraw = 20Balance in chequing = 980.000000
 Amount deposited=40
+Amount transferred=1000 and The current balance of chequing account is 0.000000 and saving account is 2000.000000Amount to withdraw = 500Balance in chequing = 500.000000
+Amount deposited=10000Amount deposited=10Amount deposited=10Amount deposited=10
