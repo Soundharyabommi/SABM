@@ -126,7 +126,7 @@ int test_pin_change(int attempt)
                         if(attempt==0){
                                     printf("\nSorry, You have exceeded the number of times that you need to input the correct password");
                                     attempt=4;
-                                    return -1;
+                                    return -2;
                                     //exit(0);
                         }
                         test_pin_change(attempt);
@@ -536,6 +536,7 @@ int test_all_cases()
     printf("\n10. Test currency exchange function");
     printf("\n11. Test help function");
     printf("\n12. Test personal loan function");
+    printf("\nNOTE: Please follow the instructions correctly for proper running of test cases.\nIf the instructions are misled, the test cases are designed to fail\n");
     printf("\nInput your choice of test: ");
 
     scanf("%d",&inp);
@@ -654,16 +655,16 @@ int test_all_cases()
           printf("\nINPUT: Test case 2: A function call with attempt=1 allowing the user for a last chance to enter the existing password right\n");
           printf("\n The program should get a wrong password from user and display as the attempt will be exceeded\n");
            var = test_pin_change(1);
-            if(var == -1)
+            if(var == -2)
             {
                 char t[1000];
-                sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: wrong password in third attempt,so display exceeded message, Expected Output: %d, Output: %d .\n",-1,var);
+                sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: wrong password in third attempt,so display exceeded message, Expected Output: %d, Output: %d .\n",-2,var);
 
                 printf(t);
                 fprintf(test_result,t);
             } else {
                  char t[1000];
-                    sprintf(t,"\nOUTPUT: 2) TEST CASE FAIL: You are supposed to enter wrong password, Expected Output: %d, Output: %d .\n",-1,var);
+                    sprintf(t,"\nOUTPUT: 2) TEST CASE FAIL: You are supposed to enter wrong password, Expected Output: %d, Output: %d .\n",-2,var);
 
                     printf(t);
                     fprintf(test_result,t);
@@ -681,10 +682,17 @@ int test_all_cases()
            fclose(fPr);
            printf("\nNote: Please enter any PIN other than %s and check the output\n",str1);
            var = test_pin_change(3);
+           if (var == -2){
            char t3[1000];
-           sprintf(t3,"\nOUTPUT: 3) TEST CASE PASS: Incorrect password as long as the attempt was not four, Expected Output: %d, Output: %d .\n",var,var);
+           sprintf(t3,"\nOUTPUT: 3) TEST CASE PASS: Incorrect password as long as the attempt was not four, Expected Output: %d, Output: %d .\n",-2,var);
            printf(t3);
            fprintf(test_result,t3);
+           } else {
+               char t3[1000];
+               sprintf(t3,"\nOUTPUT: 3) TEST CASE FAIL: You failed to give invalid values to the existing pin, Expected Output: %d, Output: %d .\n",-2,var);
+               printf(t3);
+               fprintf(test_result,t3);
+           }
 
            /*Test case 4: Check the output by entering a New PIN less than/greater than 4 digits. Any number of Zeros in the beginning will not be counted as a digit*/
            printf("\nINPUT:Test case 4: Check the output by entering a new PIN having a password length lesser than/greater than 4-digits");
@@ -753,10 +761,18 @@ int test_all_cases()
            fclose(fptr);
            printf("\nNote: Please enter any PIN other than %s and check the output\n",s1);
            var = test_pin_change(3);
+           if (var == -2){
            char s[1000];
-           sprintf(s,"\nOUTPUT: 6) TEST CASE PASS: Incorrect password as it has characters/special characters, Expected Output: %d, Output: %d .\n",var,var);
+           sprintf(s,"\nOUTPUT: 6) TEST CASE PASS: Incorrect password as it has characters/special characters/any invalid entries, Expected Output: %d, Output: %d \n",-2,var);
            printf(s);
            fprintf(test_result,s);
+           } else {
+             char s[1000];
+             sprintf(s,"\nOUTPUT: 6) TEST CASE FAIL: You failed to enter characters/special characters as inputs to existingPin, Expected Output: %d, Output: %d .\n",-2,var);
+             printf(s);
+             fprintf(test_result,s);
+
+             }
 
 
            /* Test Case 7: Check the output of the code by entering a non-palindrome 4-digit PIN as input to the new PIN*/
