@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include "../include/cheque_book_request.h"
+#include "../include/transaction.h"
+#include "../include/switch_statement.h"
 
 void cheque_book_request(){
   printf("\nThanks! Cheque book request has been placed.");

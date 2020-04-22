@@ -12,11 +12,12 @@
 int test_pin_init(int counter){
     int a,b;
     char string[1024];
-    char *field;
     if(counter<=3){
         char PIN[4];
         printf("\nEnter your 4-DIGIT PIN: ");
         scanf("%s",&PIN);
+        //gets(PIN);
+        //fgetc(stdin);
         a=atoi(PIN);
         FILE *fPtr;
         fPtr=fopen("../datafolder/password.txt","r");
@@ -61,7 +62,9 @@ int test_pin_change(int attempt)
     if(attempt<=3){
         char existingPin[5];
         printf("Please enter your existing PIN:");
+        //gets(existingPin);
         scanf("%s",&existingPin);
+
         a=atoi(existingPin);
         while(fgets(string,1024,fPtr)){
                 b=atoi(string);
@@ -69,7 +72,7 @@ int test_pin_change(int attempt)
         fclose(fPtr);
         fPtr=fopen("../datafolder/password.txt","r+");
         int existingPinCmp;
-        if(a==b)
+        if(a==b){
                existingPinCmp=0;
                if(existingPinCmp==0){
                              attempt = 4;
@@ -113,7 +116,7 @@ int test_pin_change(int attempt)
                                 return -3;
                                 //test_pin_change(3);
                               }
-                  } else {
+                }  } else {
                         printf("\nInCorrect password\n");
                         attempt--;
                         if(attempt==0){
@@ -273,7 +276,7 @@ int test_withdraw()
     } //end of if for withdraw choice and else starts
     else {
         printf("\n Invalid account choice");
-        withdraw();
+        test_withdraw();
     }// end of else for choice
     fflush(stdin);
     fclose(fPtr);
@@ -457,12 +460,12 @@ int test_currency_exchange( int cash,char *type)
             printf("%s",str);
     }
     fclose(fpr);*/
-    printf("\nThanks for depositing.Please collect your converted currency\n");
+    printf("\nThanks for depositing\n");
     switch(ch)
     {
     case 1:
             if(strcmp(type,"INR")==0){
-                printf("\nThe from and to conversion type are same\n");
+                printf("\nSorry!The from and to conversion type are same\n");
              }
             if(strcmp(type,"USD")==0){
                 printf("\nUSD to INR : %lf\n",cash*76.62);
@@ -474,7 +477,7 @@ int test_currency_exchange( int cash,char *type)
 
     case 2:
             if(strcmp(type,"USD")==0) {
-                printf("\nThe from and to conversion type are same\n");
+                printf("\nSorry!The from and to conversion type are same\n");
             }
             if(strcmp(type,"INR")==0){
                 printf("\nINR to USD : %lf\n",cash*.013);
@@ -486,7 +489,7 @@ int test_currency_exchange( int cash,char *type)
 
     case 3:
             if(strcmp(type,"CAD")==0){
-                printf("\nThe from and to conversion type are same\n");
+                printf("\nSorry!The from and to conversion type are same\n");
             }
             if(strcmp(type,"INR")==0) {
                 printf("\nINR to CAD : %lf\n",cash*.018);
@@ -537,7 +540,7 @@ int test_all_cases()
        case 1:
            printf("\nTesting Pin init function.\n");
 
-           int counter=3;
+           //int counter=3;
            var = test_pin_init(4);
            /* Test case 1: A function call with counter=4. The program should finish by returning -2 */
            if(var == -2)
@@ -555,7 +558,7 @@ int test_all_cases()
           int var1 = test_pin_init(1);
             if(var1 == -1)
             {
-                char t[100];
+                char t[1000];
                     sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: wrong password in third attempt,so display exceeded message, Expected Output: %d, Output: %d .\n",-1,var1);
 
                     printf(t);
@@ -603,7 +606,7 @@ int test_all_cases()
         case 2:
             printf("\nTesting Pin Change function.\n");
 
-            int attempt=3;
+            //int attempt=3;
             var = test_pin_change(4);
            /* Test case 1: A function call with attempt=4. The program should finish by returning -2 */
             if(var == -2)
@@ -620,7 +623,7 @@ int test_all_cases()
            var = test_pin_change(1);
             if(var == -1)
             {
-                char t[100];
+                char t[1000];
                     sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: wrong password in third attempt,so display exceeded message, Expected Output: %d, Output: %d .\n",-1,var);
 
                     printf(t);
@@ -726,17 +729,6 @@ int test_all_cases()
                fprintf(test_result,t6);
            }
            fclose(ft);
-           /*Test case 8: Check whether the pin that u changed has been updated in the file by opening the file to read the contents*/
-            printf("\nINPUT: Test case 8: Check whether the pin that you changed is updated in the file");
-            FILE *fe;
-            fe = fopen("../datafolder/password.txt","r");
-            char string[100];
-            while(fgets(string,100,fe)!=NULL)
-            {
-            printf("\nThe existing PIN stored in file is %s\n",string);
-            }
-            fflush(fe);
-            fclose(fe);
 
 
             break;
@@ -767,7 +759,7 @@ int test_all_cases()
               var = test_currency_transfer();
              if (var == -3)
              {
-                    char t[100];
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 3) TEST CASE PASS: No sufficient amount to make transfer, Expected Output: %d, Output: %d .\n",-3,var);
                     printf(t);
                     fprintf(test_result,t);
@@ -785,7 +777,7 @@ int test_all_cases()
              var = test_currency_transfer();
              if (var == -5)
              {
-                    char t[100];
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 5) TEST CASE PASS: Value is subtracted from the 'from' acc and added to the 'to' acc , Expected Output: %d, Output: %d .\n",-5,var);
                     printf(t);
                     fprintf(test_result,t);
@@ -821,7 +813,7 @@ int test_all_cases()
                var = test_withdraw();
              if (var == -3)
              {
-                    char t[100];
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 3) TEST CASE PASS: Value will be  subtracted from the respective account, Expected Output: %d, Output: %d .\n",-3,var);
                     printf(t);
                     fprintf(test_result,t);
@@ -860,7 +852,7 @@ int test_all_cases()
              var = test_deposit();
              if (var == 1)
              {
-                    char t[100];
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 3) TEST CASE PASS: Amount will be added to that respective account , Expected Output: %d, Output: %d .\n",1,var);
                     printf(t);
                     fprintf(test_result,t);
@@ -872,7 +864,7 @@ int test_all_cases()
              var = test_deposit();
              if (var == -1)
              {
-                    char t[100];
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 4) TEST CASE PASS: Amount will be added to that respective account , Expected Output: %d, Output: %d .\n",-1,var);
                     printf(t);
                     fprintf(test_result,t);
@@ -957,10 +949,13 @@ int test_all_cases()
             printf("\n Testing Currency exchange function");
             /*Test case 1: Check whether 5000 cad has been converted to INR and output is as expected*/
            printf("\n Check whether 5000 cad has been converted to desired currency and output is the expected one");
+           printf("\nNote please enter as a string and use CAPS LOCK and not a number. For example if cad enter CAD");
            char curr[4];
            int amt;
            printf("\nInput the type of currency which you want to convert in (INR/CAD/USD): ");
            scanf("%s",&curr);
+           //gets(curr);
+           //fgetc(stdin);
            printf("\nPlease enter the amount to be exchanged: ");
            scanf("%d",&amt);
            if(strlen(curr)>3)
@@ -1001,9 +996,26 @@ int test_all_cases()
              }
              break;
 
+        default :
+             printf("\nInvalid choice");
+             break;
 
 
     }
+    int another_transaction;
+    printf("\n Do you want to continue testing? Press 1 to continue and 2 to exit");
+    scanf("%d",&another_transaction);
+    if((another_transaction==1)||(another_transaction==2))
+    {
+        if(another_transaction==1){
+           test_all_cases();
+        } else {
+        exit(0);
+        }
+    } else {
+    printf("Invalid choice");
+    exit(0);
+      }
     return 0;
 }
 

@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include "../include/help.h"
+#include "../include/transaction.h"
+#include "../include/switch_statement.h"
 
 void help(){
   printf("\nThanks! Your request for help has been placed.");

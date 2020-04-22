@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="test_8h" kind="file" language="C++">
+    <compoundname>test.h</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="test_8h_1a9c3324a4af484370906c0bd99f3890d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int test_all_cases</definition>
+        <argsstring>()</argsstring>
+        <name>test_all_cases</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/test.h" line="1" column="5" declfile="include/test.h" declline="1" declcolumn="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>test_all_cases();</highlight></codeline>
+    </programlisting>
+    <location file="include/test.h"/>
+  </compounddef>
+</doxygen>

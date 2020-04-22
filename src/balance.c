@@ -4,6 +4,8 @@
 #include<stdlib.h>
 #include "../include/balance.h"
 #include "../include/global.h"
+#include "../include/transaction.h"
+#include "../include/switch_statement.h"
 //start of check balance function
 void balance(){
 

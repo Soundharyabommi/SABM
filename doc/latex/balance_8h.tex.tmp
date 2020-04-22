@@ -1,0 +1,25 @@
+\hypertarget{balance_8h}{}\doxysection{include/balance.h File Reference}
+\label{balance_8h}\index{include/balance.h@{include/balance.h}}
+
+
+displays the current balance of chequing and savings accounts  
+
+
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{balance_8h_aeceb989c9c8ba1acf0e2864e67351dc6}\label{balance_8h_aeceb989c9c8ba1acf0e2864e67351dc6}} 
+void {\bfseries balance} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+displays the current balance of chequing and savings accounts 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em no} & input parameter and the function does not return anything \\
+\hline
+\end{DoxyParams}

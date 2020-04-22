@@ -1,6 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include "../include/personal_loan.h"
+#include "../include/transaction.h"
+#include "../include/switch_statement.h"
+
 void personal_loan(){
   printf("\nThanks! Your request for personal loan has been placed.");
   printf("\nNote: You will be contacted from the bank shortly\n");

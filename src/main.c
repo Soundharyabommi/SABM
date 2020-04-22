@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include "../include/functions.h"
 #include "../include/global.h"
-#include "../test/include/testingPinfunction.h"
+#include "../test/include/testing_function.h"
 
 int main(int argc, char *argv[])
 {
