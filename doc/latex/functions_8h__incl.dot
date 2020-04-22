@@ -1,0 +1,35 @@
+digraph "include/functions.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="include/functions.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Simply contains all the headers of the different function."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="deposit.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$deposit_8h.html",tooltip="performs deposit operation and stores the deposit operation done by the user to the file"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="help.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$help_8h.html",tooltip="places the request for help"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="pin_init.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pin__init_8h.html",tooltip="checks whether the pin entered by the user matches with the PIN stored in the file but the user is on..."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="withdraw.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$withdraw_8h.html",tooltip="performs withdrawal and stores the withdrawal operation done by the user to the file."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="cheque_book_request.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cheque__book__request_8h.html",tooltip="places request for cheque book"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="pay_bill.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pay__bill_8h.html",tooltip="The function performs the bill payment operation for Credit card, electricity bill and mobile bill an..."];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="pin_change.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pin__change_8h.html",tooltip="First checks whether the existing pin matches with the pin stored in the file and on changing the pin..."];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="switch_statement.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$switch__statement_8h.html",tooltip="contains the function call for all the transactions and performs the transaction based on input from ..."];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="transaction.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$transaction_8h.html",tooltip="returns the user's choice of transaction to be performed"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="transaction_history.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$transaction__history_8h.html",tooltip="this function prints transactions summary of withdrawal, deposit, currency transfer and bill payment...."];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="personal_loan.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$personal__loan_8h.html",tooltip="places request for personal loan"];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="balance.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$balance_8h.html",tooltip="displays the current balance of chequing and savings accounts"];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="currency_exchange.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$currency__exchange_8h.html",tooltip="the function performs the currency conversion between INR/CAD/USD and displays the amount that was co..."];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="currency_transfer.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$currency__transfer_8h.html",tooltip="The function transfers the amount between chequing and savings account and writes the transfer histor..."];
+}

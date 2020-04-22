@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="global_8h" kind="file" language="C++">
+    <compoundname>global.h</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="global_8h_1a3d5e024b709c7e393b8a60d96d415788" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float balanceInChequing</definition>
+        <argsstring></argsstring>
+        <name>balanceInChequing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/global.h" line="9" column="14" declfile="include/global.h" declline="9" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="variable" id="global_8h_1a885078cc4b60e7e5aef37b7c19a39439" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float balanceInSaving</definition>
+        <argsstring></argsstring>
+        <name>balanceInSaving</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/global.h" line="10" column="14" declfile="include/global.h" declline="10" declcolumn="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>contains declarations for globals used in the program </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="6"><highlight class="preprocessor">#ifndef<sp/>__GLOBAL_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__GLOBAL_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>balanceInChequing<sp/>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>balanceInSaving<sp/>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/global.h"/>
+  </compounddef>
+</doxygen>
