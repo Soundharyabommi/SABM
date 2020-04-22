@@ -8,11 +8,11 @@ int pin_init(int counter)
 {
     int a,b;
     char string[1024];
-    char *field;
     if(counter<=3){
         char PIN[4];
         printf("\nEnter your 4-DIGIT PIN: ");
-        scanf("%s",&PIN);
+        //scanf("%s",&PIN);
+        gets(PIN);
         a=atoi(PIN);
         FILE *fPtr;
         fPtr=fopen("../datafolder/password.txt","r");
@@ -38,6 +38,10 @@ int pin_init(int counter)
                 printf("\nSorry, You have exceeded the number of times that you need to input the correct password");
                 printf("\nThe system is temporarily confiscated\n");
                 counter=4;
-                exit(0);}
-            pin_init(counter);}}
+                exit(0);
+            }
+            pin_init(counter);
+        }
+    }
+    return 0;
 }

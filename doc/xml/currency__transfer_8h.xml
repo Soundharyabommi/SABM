@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="currency__transfer_8h" kind="file" language="C++">
+    <compoundname>currency_transfer.h</compoundname>
+    <includedby refid="functions_8h" local="yes">include/functions.h</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/functions.h</label>
+        <link refid="functions_8h"/>
+      </node>
+      <node id="1">
+        <label>include/currency_transfer.h</label>
+        <link refid="currency__transfer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="currency__transfer_8h_1a102ed992a4f54f48b1159fce5408fb46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void currency_transfer</definition>
+        <argsstring>()</argsstring>
+        <name>currency_transfer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/currency_transfer.h" line="10" column="6" declfile="include/currency_transfer.h" declline="10" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The function transfers the amount between chequing and savings account and writes the transfer history to the file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">there</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is no input parameter and the function does not return anything. On successful execution, the history of transfers made will be written to the file and balance of chequing and savings account will be updated </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#ifndef<sp/>__CURRENCY_TRANSFER_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__CURRENCY_TRANSFER_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>currency_transfer();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/currency_transfer.h"/>
+  </compounddef>
+</doxygen>

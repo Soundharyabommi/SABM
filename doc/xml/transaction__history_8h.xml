@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="transaction__history_8h" kind="file" language="C++">
+    <compoundname>transaction_history.h</compoundname>
+    <includedby refid="functions_8h" local="yes">include/functions.h</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/transaction_history.h</label>
+        <link refid="transaction__history_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/functions.h</label>
+        <link refid="functions_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="transaction__history_8h_1a9a052d82d999d5f5e3fdca289ae06452" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void transaction_history</definition>
+        <argsstring>()</argsstring>
+        <name>transaction_history</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/transaction_history.h" line="10" column="6" declfile="include/transaction_history.h" declline="10" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>this function prints transactions summary of withdrawal, deposit, currency transfer and bill payment. That is, it displays the contents of the file that contains all the stated information. param[in] there is no input parameter and the function does not return anything </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#ifndef<sp/>__TRANSACTION_HISTORY_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__TRANSACTION_HISTORY_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>transaction_history();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/transaction_history.h"/>
+  </compounddef>
+</doxygen>

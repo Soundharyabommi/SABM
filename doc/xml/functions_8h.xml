@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="functions_8h" kind="file" language="C++">
+    <compoundname>functions.h</compoundname>
+    <includes refid="deposit_8h" local="yes">deposit.h</includes>
+    <includes refid="help_8h" local="yes">help.h</includes>
+    <includes refid="pin__init_8h" local="yes">pin_init.h</includes>
+    <includes refid="withdraw_8h" local="yes">withdraw.h</includes>
+    <includes refid="cheque__book__request_8h" local="yes">cheque_book_request.h</includes>
+    <includes refid="pay__bill_8h" local="yes">pay_bill.h</includes>
+    <includes refid="pin__change_8h" local="yes">pin_change.h</includes>
+    <includes refid="switch__statement_8h" local="yes">switch_statement.h</includes>
+    <includes refid="transaction_8h" local="yes">transaction.h</includes>
+    <includes refid="transaction__history_8h" local="yes">transaction_history.h</includes>
+    <includes refid="personal__loan_8h" local="yes">personal_loan.h</includes>
+    <includes refid="balance_8h" local="yes">balance.h</includes>
+    <includes refid="currency__exchange_8h" local="yes">currency_exchange.h</includes>
+    <includes refid="currency__transfer_8h" local="yes">currency_transfer.h</includes>
+    <incdepgraph>
+      <node id="11">
+        <label>transaction_history.h</label>
+        <link refid="transaction__history_8h"/>
+      </node>
+      <node id="14">
+        <label>currency_exchange.h</label>
+        <link refid="currency__exchange_8h"/>
+      </node>
+      <node id="8">
+        <label>pin_change.h</label>
+        <link refid="pin__change_8h"/>
+      </node>
+      <node id="7">
+        <label>pay_bill.h</label>
+        <link refid="pay__bill_8h"/>
+      </node>
+      <node id="10">
+        <label>transaction.h</label>
+        <link refid="transaction_8h"/>
+      </node>
+      <node id="9">
+        <label>switch_statement.h</label>
+        <link refid="switch__statement_8h"/>
+      </node>
+      <node id="3">
+        <label>help.h</label>
+        <link refid="help_8h"/>
+      </node>
+      <node id="1">
+        <label>include/functions.h</label>
+        <link refid="functions_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cheque_book_request.h</label>
+        <link refid="cheque__book__request_8h"/>
+      </node>
+      <node id="4">
+        <label>pin_init.h</label>
+        <link refid="pin__init_8h"/>
+      </node>
+      <node id="5">
+        <label>withdraw.h</label>
+        <link refid="withdraw_8h"/>
+      </node>
+      <node id="13">
+        <label>balance.h</label>
+        <link refid="balance_8h"/>
+      </node>
+      <node id="2">
+        <label>deposit.h</label>
+        <link refid="deposit_8h"/>
+      </node>
+      <node id="15">
+        <label>currency_transfer.h</label>
+        <link refid="currency__transfer_8h"/>
+      </node>
+      <node id="12">
+        <label>personal_loan.h</label>
+        <link refid="personal__loan_8h"/>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para>Simply contains all the headers of the different function. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="5"><highlight class="preprocessor">#ifndef<sp/>__FUNCTIONS_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__FUNCTIONS_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="deposit_8h" kindref="compound">deposit.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="help_8h" kindref="compound">help.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pin__init_8h" kindref="compound">pin_init.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="withdraw_8h" kindref="compound">withdraw.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="cheque__book__request_8h" kindref="compound">cheque_book_request.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pay__bill_8h" kindref="compound">pay_bill.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pin__change_8h" kindref="compound">pin_change.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="switch__statement_8h" kindref="compound">switch_statement.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="transaction_8h" kindref="compound">transaction.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="transaction__history_8h" kindref="compound">transaction_history.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="personal__loan_8h" kindref="compound">personal_loan.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="balance_8h" kindref="compound">balance.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="currency__exchange_8h" kindref="compound">currency_exchange.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="currency__transfer_8h" kindref="compound">currency_transfer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/functions.h"/>
+  </compounddef>
+</doxygen>

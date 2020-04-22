@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="pin__init_8h" kind="file" language="C++">
+    <compoundname>pin_init.h</compoundname>
+    <includedby refid="functions_8h" local="yes">include/functions.h</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>include/functions.h</label>
+        <link refid="functions_8h"/>
+      </node>
+      <node id="1">
+        <label>include/pin_init.h</label>
+        <link refid="pin__init_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="pin__init_8h_1a68f219b8cd63852651013b87d419a810" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int pin_init</definition>
+        <argsstring>(int counter)</argsstring>
+        <name>pin_init</name>
+        <param>
+          <type>int</type>
+          <declname>counter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/pin_init.h" line="10" column="5" declfile="include/pin_init.h" declline="10" declcolumn="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>checks whether the pin entered by the user matches with the PIN stored in the file but the user is only allowed three attempts to enter the correct password to get access to the program </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">counter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>and the function returns zero on successful execution </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#ifndef<sp/>__PIN_INIT_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__PIN_INIT_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pin_init(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>counter);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/pin_init.h"/>
+  </compounddef>
+</doxygen>

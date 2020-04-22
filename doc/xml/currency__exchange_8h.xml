@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="currency__exchange_8h" kind="file" language="C++">
+    <compoundname>currency_exchange.h</compoundname>
+    <includedby refid="functions_8h" local="yes">include/functions.h</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/currency_exchange.h</label>
+        <link refid="currency__exchange_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/functions.h</label>
+        <link refid="functions_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="currency__exchange_8h_1aa2696f72ae8038c3798f691ba5bdb9e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int currency_exchange</definition>
+        <argsstring>(int cash, char *type)</argsstring>
+        <name>currency_exchange</name>
+        <param>
+          <type>int</type>
+          <declname>cash</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/currency_exchange.h" line="12" column="5" declfile="include/currency_exchange.h" declline="12" declcolumn="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>the function performs the currency conversion between INR/CAD/USD and displays the amount that was converted </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cash</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The amount that has to be converted </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">*type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to type. input currency type which is to be converted. There is no output parameter. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the function returns 0 when the conversion has been made. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="9"><highlight class="preprocessor">#ifndef<sp/>__CURRENCY_EXCHANGE_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__CURRENCY_EXCHANGE_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>currency_exchange(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cash,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*type);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/currency_exchange.h"/>
+  </compounddef>
+</doxygen>

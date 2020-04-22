@@ -18,10 +18,9 @@ int pin_change(int attempt)
      printf("Please enter your existing PIN:");
      scanf("%s",&existingPin);
      a=atoi(existingPin);
-         while(fgets(string,1024,fPtr))
-     {
+      while(fgets(string,1024,fPtr)){
          b=atoi(string);
-     }
+      }
      fclose(fPtr);
      fPtr=fopen("../datafolder/password.txt","r+");
      int existingPinCmp;
@@ -59,8 +58,10 @@ int pin_change(int attempt)
 
        else{
         printf("\nnew pin has been set");
+        printf("\nThanks! Please re-login again to have access to the features of the SABM");
         //printf("%d",originalN);
         fprintf(fPtr,"%d",originalN);
+        exit(0);
         }
 
     }

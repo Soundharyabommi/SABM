@@ -1,6 +1,6 @@
 /**
- *@file global.h
- *@brief contains declarations for globals used in the program
+ * @file global.h
+ * @brief contains declarations for globals used in the program
  */
 
 #ifndef __GLOBAL_H__

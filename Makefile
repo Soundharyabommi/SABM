@@ -1,7 +1,7 @@
 # ------------------------------------------------
 # Generic Makefile
 #
-# Author: 
+# Author: Soundharya Bommi Raja Bommannan
 # Date  : 2020-04-16
 #
 # Changelog :

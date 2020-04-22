@@ -2,6 +2,8 @@
 #include<string.h>
 #include<stdlib.h>
 #include "../include/currency_exchange.h"
+#include "../include/transaction.h"
+#include "../include/switch_statement.h"
 
 int currency_exchange( int cash,char *type)
  {
@@ -31,31 +33,40 @@ int currency_exchange( int cash,char *type)
     switch(ch)
     {
     case 1:
-            if(strcmp(type,"INR")==0)
+            if(strcmp(type,"INR")==0) {
                 printf("\nThe from and to conversion type are same\n");
-            if(strcmp(type,"USD")==0)
+            }
+            if(strcmp(type,"USD")==0) {
                 printf("\nUSD to INR : %lf\n",cash*76.62);
-            if(strcmp(type,"CAD")==0)
+            }
+            if(strcmp(type,"CAD")==0){
                 printf("\nCAD to INR : %lf\n",cash*54.64);
-                break;
+            }
+            break;
 
     case 2:
-            if(strcmp(type,"USD")==0)
+            if(strcmp(type,"USD")==0) {
                 printf("\nThe from and to conversion type are same\n");
-            if(strcmp(type,"INR")==0)
+            }
+            if(strcmp(type,"INR")==0) {
                 printf("\nINR to USD : %lf\n",cash*.013);
-            if(strcmp(type,"CAD")==0)
+            }
+            if(strcmp(type,"CAD")==0) {
                 printf("\nCAD to USD : %lf\n",cash*0.71);
-                break;
+            }
+            break;
 
     case 3:
-            if(strcmp(type,"CAD")==0)
+            if(strcmp(type,"CAD")==0) {
                 printf("\nThe from and to conversion type are same\n");
-            if(strcmp(type,"INR")==0)
+            }
+            if(strcmp(type,"INR")==0) {
                 printf("\nINR to CAD : %lf\n",cash*.018);
-            if(strcmp(type,"USD")==0)
+            }
+            if(strcmp(type,"USD")==0) {
                 printf("\nUSD to CAD : %lf\n",cash*1.40);
-                break;
+            }
+            break;
     }
     int another_transaction;
     printf("\n Do you want to continue transaction? Press 1 to continue and 2 to exit");
