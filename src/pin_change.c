@@ -58,8 +58,10 @@ int pin_change(int attempt)
 
        else{
         printf("\nnew pin has been set");
+        printf("\nThanks! Please re-login again to have access to the features of the SABM");
         //printf("%d",originalN);
         fprintf(fPtr,"%d",originalN);
+        exit(0);
         }
 
     }

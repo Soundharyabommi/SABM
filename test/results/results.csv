@@ -74,3 +74,53 @@ OUTPUT: 1) TEST CASE PASS: Function executed successfully, Expected Output: 0, O
 OUTPUT: 1) TEST CASE PASS: Function executed successfully, Expected Output: 0, Output: 0 .
 
 OUTPUT: 1) TEST CASE PASS: Function executed successfully, Expected Output: -1, Output: -1 .
+
+OUTPUT: 1) TEST CASE PASS: Maximum attempts exceeded, Expected Output: -2, Output: -2 .
+
+OUTPUT: 2) TEST CASE PASS: wrong password in third attempt,so display exceeded message, Expected Output: -1, Output: -1 .
+
+OUTPUT: 3) TEST CASE PASS: Incorrect password as long as the attempt was not four, Expected Output: -2, Output: -2 .
+
+OUTPUT: 4) TEST CASE PASS: Invalid entry as password length is not equal to 4, Expected Output: -3, Output: -3 .
+
+OUTPUT: 5) TEST CASE PASS: Invalid as it is a palindrome, Expected Output: -4, Output: -4 .
+
+OUTPUT: 6) TEST CASE PASS: Incorrect password as it has characters/special characters, Expected Output: -2, Output: -2 .
+
+OUTPUT: 7) TEST CASE PASS: Valid PIN as it is not a palindrome, Expected Output: 0, Output: 0 .
+
+OUTPUT: 1) TEST CASE PASS: Maximum attempts exceeded, Expected Output: -2, Output: -2 .
+
+OUTPUT: 2) TEST CASE PASS: wrong password in third attempt,so display exceeded message, Expected Output: -1, Output: -1 .
+
+OUTPUT: 3) TEST CASE PASS: Incorrect password as it is either a character or special character or negative value, Expected Output: -2, Output: -2 .
+
+OUTPUT: 4) TEST CASE PASS: Correct password as it is same as the one stored in file, Expected Output: -2, Output: -2 .
+
+OUTPUT: 5) TEST CASE PASS: Incorrect password as it is either less or greater than 4-digits or not same as the one stored in file, Expected Output: -2, Output: -2 .
+
+OUTPUT: 1) TEST CASE PASS: Maximum attempts exceeded, Expected Output: -2, Output: -2 .
+
+OUTPUT: 2) TEST CASE PASS: wrong password in third attempt,so display exceeded message, Expected Output: -1, Output: -1 .
+
+OUTPUT: 3) TEST CASE PASS: Incorrect password as long as the attempt was not four, Expected Output: -2, Output: -2 .
+
+OUTPUT: 5) TEST CASE PASS: Invalid as it is a palindrome, Expected Output: -4, Output: -4 .
+
+OUTPUT: 6) TEST CASE PASS: Incorrect password as it has characters/special characters, Expected Output: -2, Output: -2 .
+
+OUTPUT: 7) TEST CASE PASS: Valid PIN as it is not a palindrome, Expected Output: 0, Output: 0 .
+
+OUTPUT: 1) TEST CASE PASS: Maximum attempts exceeded, Expected Output: -2, Output: -2 .
+
+OUTPUT: 2) TEST CASE PASS: wrong password in third attempt,so display exceeded message, Expected Output: -1, Output: -1 .
+
+OUTPUT: 3) TEST CASE PASS: Incorrect password as long as the attempt was not four, Expected Output: -2, Output: -2 .
+
+OUTPUT: 4)TEST CASE FAIL: Because you were supposed to check for password length,Expected Output: -3, Output: 0 .
+
+OUTPUT: 5) TEST CASE PASS: Invalid as it is a palindrome, Expected Output: -4, Output: -4 .
+
+OUTPUT: 6) TEST CASE PASS: Incorrect password as it has characters/special characters, Expected Output: -2, Output: -2 .
+
+OUTPUT: 7) TEST CASE PASS: Valid PIN as it is not a palindrome, Expected Output: 0, Output: 0 .

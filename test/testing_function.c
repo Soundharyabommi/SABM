@@ -106,9 +106,12 @@ int test_pin_change(int attempt)
                                                  return -4;
                                     } else{
                                             printf("\nnew pin has been set");
+                                            printf("\nThanks!Please re-login again to get access to the features of SABM");
+                                            
                                             //printf("%d",originalN);
                                             fprintf(fPtr,"%d",originalN);
                                             return 0;
+                                            exit(0);
                                       }
 
                             } else {
@@ -666,7 +669,12 @@ int test_all_cases()
                sprintf(t4,"\nOUTPUT: 4) TEST CASE PASS: Invalid entry as password length is not equal to 4, Expected Output: %d, Output: %d .\n",var,var);
                printf(t4);
                fprintf(test_result,t4);
-           }
+           } else { 
+                    char t4[1000];
+                    sprintf(t4,"\nOUTPUT: 4)TEST CASE FAIL: Because you were supposed to check for password length,Expected Output: %d, Output: %d .\n",-3,var);
+                    printf(t4);
+                    fprintf(test_result,t4);
+             }
            /* Test case 5: Check the output by entering palindrome 4-digit number as input to the new PIN*/
            printf("\nINPUT: Test Case 5: Check the output by entering any palindrome 4-digit number (like for example 1001) as input to the new PIN");
            printf("\nPlease note that any number of zeros in the beginning of password will not be counted as a digit\n");
@@ -729,6 +737,7 @@ int test_all_cases()
                fprintf(test_result,t6);
            }
            fclose(ft);
+           exit(0);
 
 
             break;
