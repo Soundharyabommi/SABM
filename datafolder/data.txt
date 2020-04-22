@@ -28,4 +28,4 @@ Amount to withdraw = 54Balance in chequing = 892.000000
 Amount deposited=10Amount deposited=10
 Amount paid for bill = 50 and Balance in chequing = 852.000000
 Amount to withdraw = 10Balance in chequing = 990.000000
-Amount deposited=12
+Amount deposited=12Amount to withdraw = 10Balance in chequing = 990.000000

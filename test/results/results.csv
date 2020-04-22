@@ -124,3 +124,33 @@ OUTPUT: 5) TEST CASE PASS: Invalid as it is a palindrome, Expected Output: -4, O
 OUTPUT: 6) TEST CASE PASS: Incorrect password as it has characters/special characters, Expected Output: -2, Output: -2 .
 
 OUTPUT: 7) TEST CASE PASS: Valid PIN as it is not a palindrome, Expected Output: 0, Output: 0 .
+
+OUTPUT: 1) TEST CASE PASS: Maximum attempts exceeded, Expected Output: -2, Output: -2 .
+
+OUTPUT: 2) TEST CASE FAIL: You are supposed to enter a wrong password, Expected Output: -1, Output: -2 .
+
+OUTPUT: 3) TEST CASE PASS: Incorrect password as it is either a character or special character or negative value, Expected Output: -2, Output: -2 .
+
+OUTPUT: 4) TEST CASE PASS: Correct password as it is same as the one stored in file, Expected Output: -2, Output: -2 .
+
+OUTPUT: 5) TEST CASE PASS: Incorrect password as it is either less or greater than 4-digits or not same as the one stored in file, Expected Output: -2, Output: -2 .
+
+OUTPUT: 1) TEST CASE PASS: Maximum attempts exceeded, Expected Output: -2, Output: -2 .
+
+OUTPUT: 2) TEST CASE PASS: wrong password in third attempt,so display exceeded message, Expected Output: -2, Output: -2 .
+
+OUTPUT: 3) TEST CASE PASS: Incorrect password as it is either a character or special character or negative value, Expected Output: -2, Output: -2 .
+
+OUTPUT: 4) TEST CASE PASS: Correct password as it is same as the one stored in file, Expected Output: -1, Output: -1 .
+
+OUTPUT: 5) TEST CASE PASS: Incorrect password as it is either less or greater than 4-digits or not same as the one stored in file, Expected Output: -2, Output: -2 .
+
+OUTPUT: 1) TEST CASE PASS: Maximum attempts exceeded, Expected Output: -2, Output: -2 .
+
+OUTPUT: 2) TEST CASE FAIL: You are supposed to enter a wrong password, Expected Output: -2, Output: -1 .
+
+OUTPUT: 3) TEST CASE FAIL: You failed to enter either a character or special character or negative value, Expected Output: -2, Output: -1 .
+
+OUTPUT: 4) TEST CASE FAIL: You were supposed to enter the one stored in file, Expected Output: -1, Output: -2 .
+
+OUTPUT: 5) TEST CASE FAIL: You were supposed to enter incorrect password, Expected Output: -2, Output: -1 .
