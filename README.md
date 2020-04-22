@@ -26,7 +26,7 @@ The correct file structure
 ├── INSTALL.md 	-> Installation Guide
 ├── LICENSE 	-> License file
 ├── Makefile 	-> Makefile
-├── README.md 	-> Readme file
+├── readME.md 	-> Readme file
 ├── bin 	-> Binary directory
 ├── doc         -> Doxygen documents
 │   |── html 	
