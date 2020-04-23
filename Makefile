@@ -1,12 +1,12 @@
 # ------------------------------------------------
 # Generic Makefile
 #
-# Author: Soundharya Bommi Raja Bommannan
-# Date  : 2020-04-16
+# Authors: Soundharya Bommi Raja Bommannan,Aniruudh Kannan,Adhithyan Haridas
+# Date   : 2020-04-22
 #
 # Changelog :
 # 2020-04-16: Inital Draft
-# 2019-04-20: Makefile final draft
+# 2020-04-22: Makefile final draft
 #
 # ------------------------------------------------
 
