@@ -5,9 +5,12 @@
 #include<stdlib.h>
 #include "testing_function.h"
 
+/* @brief This code contains the test cases to test all the functionalities of the SABM. Black box testing methodology is implemented. The person who does the
+ * testing should follow the instructions for proper running of the test. If the instructions are misled, then the tests are designed to fail.
+ * The pass and fail status of the test cases implemented are logged in the results.csv file. Please enter "sabm -t" command to run the test cases.
+ */
+
 //start of pin initialization function
-
-
 
 int test_pin_init(int counter){
     int a,b;
@@ -50,7 +53,7 @@ int test_pin_init(int counter){
         }
     }
     return -2;
-}//end of pin init
+}//end of pin init function
 
 //start of pin change function
 
@@ -135,6 +138,9 @@ int test_pin_change(int attempt)
 
        return -2;
 }
+//end of pin change function
+
+//start of currency transfer function
 
  float balanceInChequing;
  float balanceInSaving;
@@ -210,7 +216,7 @@ int test_pin_change(int attempt)
 
     } // end of currency transfer
 
-// withdraw
+// start of withdraw
 int test_withdraw()
     {
     int amountToWidthdraw;
@@ -286,6 +292,8 @@ int test_withdraw()
     fclose(fPtr);
 	return 0;
     }//end of withdraw
+
+//start of balance
 
 int test_balance(){
 
@@ -369,6 +377,7 @@ int test_transaction_history(){
     fclose(fhr);*/
    return -1;
 }
+//end of transaction history
 //pay bill
 int test_pay_bill()
 {
@@ -432,7 +441,7 @@ int test_pay_bill()
        fclose(fPtr);
 
        return 0;
-}
+} // pay bill
 //cheque book
 int test_cheque_book_request(){
   printf("\nThanks! Cheque book request has been placed.");
@@ -505,21 +514,27 @@ int test_currency_exchange( int cash,char *type)
     }
         return -1;
  }
+ //end of currency exchange
+ //start of personal loan
 
  int test_personal_loan(){
   printf("\nThanks! Your request for personal loan has been placed.");
   printf("\nNote: You will be contacted from the bank shortly\n");
   return 0;
   }
+  //end of personal loan
 
+ //start of help
   int test_help(){
   printf("\nThanks! Your request for help has been placed.");
   printf("\nNote: You will be contacted from the bank shortly");
   return 0;
   }
+  //end of help
 
 
 
+/* Main test case begins here*/
 int test_all_cases()
 {
     int var,inp;
@@ -1114,4 +1129,5 @@ int test_all_cases()
       }
     return 0;
 }
+/* End of test cases execution*/
 
