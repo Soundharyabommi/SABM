@@ -1047,20 +1047,30 @@ int test_all_cases()
              printf("\n Check the output by entering invalid bill payments option\n");
              var = test_pay_bill();
              if (var == -1){
-                    char t[100];
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 1) TEST CASE PASS: Invalid bill payment option, Expected Output: %d, Output: %d .\n",-1,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 1) TEST CASE FAIL: Invalid entries, Expected Output: %d, Output: %d .\n",-1,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
              /* Test case 2: Check the output by entering 0 as the value for amount to pay*/
              printf("\n Check the output by giving 0 as the value for amount to pay");
              var = test_pay_bill();
              if (var == -2){
-                    char t[100];
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: Not a valid amount to make payment, Expected Output: %d, Output: %d .\n",-2,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 2) TEST CASE FAIL, Expected Output: %d, Output: %d .\n",-2,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
 
             /* Test case 3: Check the output by entering value for amount lesser than balance in chequing and savings*/
              printf("\n Check the output by entering value for amount to pay lesser than balance in chequing and savings");
@@ -1070,7 +1080,12 @@ int test_all_cases()
                     sprintf(t,"\nOUTPUT: 3) TEST CASE PASS: Payment made, Expected Output: %d, Output: %d .\n",-3,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 3) TEST CASE FAIL, Expected Output: %d, Output: %d .\n",-3,var);
+                    printf(t);
+                    fprintf(test_result,t);
+              }
              break;
 
         case 9:
@@ -1110,6 +1125,12 @@ int test_all_cases()
                     sprintf(b,"\nOUTPUT: 1) TEST CASE PASS: Function executed successfully, Expected Output: %d, Output: %d .\n",-1,var);
                     printf(b);
                     fprintf(test_result,b);
+                    } else {
+                        char b[1000];
+                        sprintf(b,"\nOUTPUT: 1) TEST CASE FAIL, Expected Output: %d, Output: %d .\n",-1,var);
+                        printf(b);
+                        fprintf(test_result,b);
+
                     }
             break;
 
