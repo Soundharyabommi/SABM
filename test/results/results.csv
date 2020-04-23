@@ -246,3 +246,5 @@ OUTPUT: 1) TEST CASE PASS: Function executed successfully, Expected Output: -1, 
 OUTPUT: 1) TEST CASE PASS: Function executed successfully, Expected Output: -1, Output: -1 .
 
 OUTPUT: 1) TEST CASE PASS: Function executed successfully, Expected Output: 0, Output: 0 .
+
+OUTPUT: 1) TEST CASE PASS: Function executed successfully, Expected Output: 0, Output: 0 .

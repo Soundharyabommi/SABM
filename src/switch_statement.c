@@ -3,6 +3,8 @@
 #include<stdlib.h>
 #include<math.h>
 #include<ctype.h>
+#include<string.h>
+#include "../include/functions.h"
 #include "../include/switch_statement.h"
 #include "../include/global.h"
 /* This function contains the calling for all the functions*/

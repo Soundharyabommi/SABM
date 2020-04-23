@@ -4,7 +4,7 @@ Smart Automated Banking Machine (SABM) is an advanced banking machine software w
 
 # Installation
 
-Please refer to [INSTALL.md](https://github.com/Soundharyabommi/SABM/blob/devel/INSTALL.md) file for installation instructions.
+Please refer to [INSTALL.md](https://github.com/Soundharyabommi/SABM/blob/master/INSTALL.md) file for installation instructions.
 
 # Usage
 

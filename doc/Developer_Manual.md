@@ -44,7 +44,7 @@ It is assumed that
 
 The program flow for the application is as follows:
 
-![Diagram](https://github.com/Soundharyabommi/SABM/blob/dev/asset/c.jpg)
+![Diagram](https://github.com/Soundharyabommi/SABM/tree/master/asset/c.jpg)
 
 - At the start of the main function, initially 'counter' variable is set to 3. The main.c file calls the function in pin_init.c, by passing the value stored in the counter,to allow the user to get access to the features of the sabm. 
 - Transaction function is called to get the user's choice to run the program.
@@ -65,4 +65,4 @@ The program flow for the application is as follows:
 
 # Documentation
 
-Complete documentation of the source code can be found [here](https://github.com/Soundharyabommi/SABM/blob/devel/doc/html/index.html).
+Complete documentation of the source code can be found [here](https://github.com/Soundharyabommi/SABM/blob/master/doc/html/index.html).
