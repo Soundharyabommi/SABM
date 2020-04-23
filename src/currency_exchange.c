@@ -5,6 +5,15 @@
 #include "../include/transaction.h"
 #include "../include/switch_statement.h"
 
+
+/**
+ * @file currency_exchange.c
+ * @brief the function performs the currency conversion between INR/CAD/USD and displays the amount that was converted
+ * @param[in] cash - The amount that has to be converted
+ * @param[in] *type  Pointer to type. input currency type which is to be converted. There is no output parameter.
+ * @return the function returns 0 when the conversion has been made.
+ */
+
 int currency_exchange( int cash,char *type)
  {
     int ch;
