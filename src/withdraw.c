@@ -7,10 +7,16 @@
 #include "../include/transaction.h"
 #include "../include/switch_statement.h"
 
+/**
+ * @file withdraw.c
+ * @brief performs withdrawal and stores the withdrawal operation done by the user to the file.
+ * @param[in] there is no input parameter
+ * @return zero
+ */
+
 float  balanceInChequing =1000;
 float balanceInSaving =1000;
-    int withdraw()
-    {
+int withdraw(){
     int amountToWidthdraw;
     float dailyLimit =500;
     FILE *fPtr;
@@ -79,20 +85,19 @@ float balanceInSaving =1000;
     int another_transaction;
     printf("\n Do you want to continue transaction? Press 1 to continue and 2 to exit");
     scanf("%d",&another_transaction);
-    if((another_transaction==1)||(another_transaction==2))
-    {
+    if((another_transaction==1)||(another_transaction==2)){
         if(another_transaction==1){
            int t1=transaction();
            switch_statement(t1);
         } else {
-        exit(0);
+            exit(0);
         }
     } else {
-    printf("Invalid choice");
-    exit(0);
+       printf("Invalid choice");
+       exit(0);
       }
 	return 0;
-    }//end of withdraw
+}//end of withdraw
 
 
 

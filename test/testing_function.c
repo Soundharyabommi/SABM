@@ -5,9 +5,12 @@
 #include<stdlib.h>
 #include "testing_function.h"
 
+/* @brief This code contains the test cases to test all the functionalities of the SABM. Black box testing methodology is implemented. The person who does the
+ * testing should follow the instructions for proper running of the test. If the instructions are misled, then the tests are designed to fail.
+ * The pass and fail status of the test cases implemented are logged in the results.csv file. Please enter "sabm -t" command to run the test cases.
+ */
+
 //start of pin initialization function
-
-
 
 int test_pin_init(int counter){
     int a,b;
@@ -35,6 +38,7 @@ int test_pin_init(int counter){
         if(pincmp==0){
             printf("\nCorrect password");
             counter = 4;
+            return -1;
         } else {
             printf("\nInCorrect password\n");
             counter--;
@@ -42,14 +46,14 @@ int test_pin_init(int counter){
                 printf("\nSorry, You have exceeded the number of times that you need to input the correct password");
                 printf("\nThe system is temporarily confiscated\n");
                 counter=4;
-                return -1;
+                return -2;
                 //exit(0);
             }
             test_pin_init(counter);
         }
     }
     return -2;
-}//end of pin init
+}//end of pin init function
 
 //start of pin change function
 
@@ -107,7 +111,7 @@ int test_pin_change(int attempt)
                                     } else{
                                             printf("\nnew pin has been set");
                                             printf("\nThanks!Please re-login again to get access to the features of SABM");
-                                            
+
                                             //printf("%d",originalN);
                                             fprintf(fPtr,"%d",originalN);
                                             return 0;
@@ -125,7 +129,7 @@ int test_pin_change(int attempt)
                         if(attempt==0){
                                     printf("\nSorry, You have exceeded the number of times that you need to input the correct password");
                                     attempt=4;
-                                    return -1;
+                                    return -2;
                                     //exit(0);
                         }
                         test_pin_change(attempt);
@@ -134,6 +138,9 @@ int test_pin_change(int attempt)
 
        return -2;
 }
+//end of pin change function
+
+//start of currency transfer function
 
  float balanceInChequing;
  float balanceInSaving;
@@ -209,7 +216,7 @@ int test_pin_change(int attempt)
 
     } // end of currency transfer
 
-// withdraw
+// start of withdraw
 int test_withdraw()
     {
     int amountToWidthdraw;
@@ -285,6 +292,8 @@ int test_withdraw()
     fclose(fPtr);
 	return 0;
     }//end of withdraw
+
+//start of balance
 
 int test_balance(){
 
@@ -368,6 +377,7 @@ int test_transaction_history(){
     fclose(fhr);*/
    return -1;
 }
+//end of transaction history
 //pay bill
 int test_pay_bill()
 {
@@ -431,7 +441,7 @@ int test_pay_bill()
        fclose(fPtr);
 
        return 0;
-}
+} // pay bill
 //cheque book
 int test_cheque_book_request(){
   printf("\nThanks! Cheque book request has been placed.");
@@ -504,21 +514,27 @@ int test_currency_exchange( int cash,char *type)
     }
         return -1;
  }
+ //end of currency exchange
+ //start of personal loan
 
  int test_personal_loan(){
   printf("\nThanks! Your request for personal loan has been placed.");
   printf("\nNote: You will be contacted from the bank shortly\n");
   return 0;
   }
+  //end of personal loan
 
+ //start of help
   int test_help(){
   printf("\nThanks! Your request for help has been placed.");
   printf("\nNote: You will be contacted from the bank shortly");
   return 0;
   }
+  //end of help
 
 
 
+/* Main test case begins here*/
 int test_all_cases()
 {
     int var,inp;
@@ -535,6 +551,7 @@ int test_all_cases()
     printf("\n10. Test currency exchange function");
     printf("\n11. Test help function");
     printf("\n12. Test personal loan function");
+    printf("\nNOTE: Please follow the instructions correctly for proper running of test cases.\nIf the instructions are misled, the test cases are designed to fail\n");
     printf("\nInput your choice of test: ");
 
     scanf("%d",&inp);
@@ -559,22 +576,36 @@ int test_all_cases()
           printf("\nINPUT: Test case 2: A function call with counter=1 allowing the user for a last chance to enter the right password\n");
           printf("\n The program should get a wrong password from user and display as the attempt will be exceeded\n");
           int var1 = test_pin_init(1);
-            if(var1 == -1)
+            if(var1 == -2)
             {
                 char t[1000];
-                    sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: wrong password in third attempt,so display exceeded message, Expected Output: %d, Output: %d .\n",-1,var1);
+                    sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: wrong password in third attempt,so display exceeded message, Expected Output: %d, Output: %d .\n",-2,var1);
 
                     printf(t);
                     fprintf(test_result,t);
-            }
+            } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 2) TEST CASE FAIL: You are supposed to enter a wrong password, Expected Output: %d, Output: %d .\n",-2,var1);
+
+                    printf(t);
+                    fprintf(test_result,t);
+               }
         /* Test case 3: Check the o/p by giving character as input to the PIN */
           printf("\nINPUT: Test case 3: Check the output by giving character/special character/negative value as input to the PIN. The program should display Incorrect password\n");
           printf("\nHint: Please enter a character/special character/negative value as input to the PIN and check the output\n");
           int var2 = test_pin_init(3);
+          if (var2 == -2){
           char t[1000];
-          sprintf(t,"\nOUTPUT: 3) TEST CASE PASS: Incorrect password as it is either a character or special character or negative value, Expected Output: %d, Output: %d .\n",var2,var2);
+          sprintf(t,"\nOUTPUT: 3) TEST CASE PASS: Incorrect password as it is either a character or special character or negative value, Expected Output: %d, Output: %d .\n",-2,var2);
           printf(t);
           fprintf(test_result,t);
+          } else {
+          char t[1000];
+          sprintf(t,"\nOUTPUT: 3) TEST CASE FAIL: You failed to enter either a character or special character or negative value, Expected Output: %d, Output: %d .\n",-2,var2);
+          printf(t);
+          fprintf(test_result,t);
+
+            }
 
       /* Test case 4: Check the output by entering the right password*/
           printf("\nINPUT: Test case 4: Check the output by entering the right password as input to the PIN. The program should display Correct password\n");
@@ -589,20 +620,35 @@ int test_all_cases()
            fflush(fPtr);
            fclose(fPtr);
           int var3 = test_pin_init(3);
+          if (var3 == -1) {
           char t1[1000];
-          sprintf(t1,"\nOUTPUT: 4) TEST CASE PASS: Correct password as it is same as the one stored in file, Expected Output: %d, Output: %d .\n",var3,var3);
+          sprintf(t1,"\nOUTPUT: 4) TEST CASE PASS: Correct password as it is same as the one stored in file, Expected Output: %d, Output: %d .\n",-1,var3);
           printf(t1);
           fprintf(test_result,t1);
+          } else {
+          char t1[1000];
+          sprintf(t1,"\nOUTPUT: 4) TEST CASE FAIL: You were supposed to enter the one stored in file, Expected Output: %d, Output: %d .\n",-1,var3);
+          printf(t1);
+          fprintf(test_result,t1);
+
+            }
 
      /* Test case 5: Check the output of the code by entering a PIN less than 4 digits, greater than 4 digits and equal to four digits
      but not same as the pin stored in the file*/
           printf("\nINPUT: Test case 5: Check the output by entering a PIN less than 4-digits, greater than 4-digits and equal to 4-digits but not same as the PIN stored in the file. The program should display Incorrect password\n");
           printf("\nHint: Enter a PIN that is less than, greater than and equal to 4-digits but not the right password and check the output");
           int var4 = test_pin_init(3);
+          if (var4 == -2){
           char t2[1000];
-          sprintf(t2,"\nOUTPUT: 5) TEST CASE PASS: Incorrect password as it is either less or greater than 4-digits or not same as the one stored in file, Expected Output: %d, Output: %d .\n",var4,var4);
+          sprintf(t2,"\nOUTPUT: 5) TEST CASE PASS: Incorrect password as it is either less or greater than 4-digits or not same as the one stored in file, Expected Output: %d, Output: %d .\n",-2,var4);
           printf(t2);
           fprintf(test_result,t2);
+          } else {
+          char t2[1000];
+          sprintf(t2,"\nOUTPUT: 5) TEST CASE FAIL: You were supposed to enter incorrect password, Expected Output: %d, Output: %d .\n",-2,var4);
+          printf(t2);
+          fprintf(test_result,t2);
+            }
 
         break;
 
@@ -624,14 +670,20 @@ int test_all_cases()
           printf("\nINPUT: Test case 2: A function call with attempt=1 allowing the user for a last chance to enter the existing password right\n");
           printf("\n The program should get a wrong password from user and display as the attempt will be exceeded\n");
            var = test_pin_change(1);
-            if(var == -1)
+            if(var == -2)
             {
                 char t[1000];
-                    sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: wrong password in third attempt,so display exceeded message, Expected Output: %d, Output: %d .\n",-1,var);
+                sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: wrong password in third attempt,so display exceeded message, Expected Output: %d, Output: %d .\n",-2,var);
+
+                printf(t);
+                fprintf(test_result,t);
+            } else {
+                 char t[1000];
+                    sprintf(t,"\nOUTPUT: 2) TEST CASE FAIL: You are supposed to enter wrong password, Expected Output: %d, Output: %d .\n",-2,var);
 
                     printf(t);
                     fprintf(test_result,t);
-            }
+              }
             /* Test case 3: Check the output by giving invalid inputs to the existing pin more than 3 times and verify it shows that the limit has been exceeded*/
            printf("\nINPUT: Test case 3: Check the output by giving invalid inputs to the existing pin for 3 times and verify it shows that the limit has exceeded after the third attempt\n");
            FILE *fPr;
@@ -645,10 +697,17 @@ int test_all_cases()
            fclose(fPr);
            printf("\nNote: Please enter any PIN other than %s and check the output\n",str1);
            var = test_pin_change(3);
+           if (var == -2){
            char t3[1000];
-           sprintf(t3,"\nOUTPUT: 3) TEST CASE PASS: Incorrect password as long as the attempt was not four, Expected Output: %d, Output: %d .\n",var,var);
+           sprintf(t3,"\nOUTPUT: 3) TEST CASE PASS: Incorrect password as long as the attempt was not four, Expected Output: %d, Output: %d .\n",-2,var);
            printf(t3);
            fprintf(test_result,t3);
+           } else {
+               char t3[1000];
+               sprintf(t3,"\nOUTPUT: 3) TEST CASE FAIL: You failed to give invalid values to the existing pin, Expected Output: %d, Output: %d .\n",-2,var);
+               printf(t3);
+               fprintf(test_result,t3);
+           }
 
            /*Test case 4: Check the output by entering a New PIN less than/greater than 4 digits. Any number of Zeros in the beginning will not be counted as a digit*/
            printf("\nINPUT:Test case 4: Check the output by entering a new PIN having a password length lesser than/greater than 4-digits");
@@ -669,7 +728,7 @@ int test_all_cases()
                sprintf(t4,"\nOUTPUT: 4) TEST CASE PASS: Invalid entry as password length is not equal to 4, Expected Output: %d, Output: %d .\n",var,var);
                printf(t4);
                fprintf(test_result,t4);
-           } else { 
+           } else {
                     char t4[1000];
                     sprintf(t4,"\nOUTPUT: 4)TEST CASE FAIL: Because you were supposed to check for password length,Expected Output: %d, Output: %d .\n",-3,var);
                     printf(t4);
@@ -691,10 +750,15 @@ int test_all_cases()
            var = test_pin_change(3);
            if(var==-4){
                char t5[1000];
-               sprintf(t5,"\nOUTPUT: 5) TEST CASE PASS: Invalid as it is a palindrome, Expected Output: %d, Output: %d .\n",var,var);
+               sprintf(t5,"\nOUTPUT: 5) TEST CASE PASS: Invalid as it is a palindrome, Expected Output: %d, Output: %d .\n",-4,var);
                printf(t5);
                fprintf(test_result,t5);
-           }
+           } else {
+               char t5[1000];
+               sprintf(t5,"\nOUTPUT: 5) TEST CASE FAIL: You are supposed to enter palindrome, Expected Output: %d, Output: %d .\n",-4,var);
+               printf(t5);
+               fprintf(test_result,t5);
+             }
 
 
            /* Test case 6: Check the output by giving invalid inputs to the existing pin more than 3 times and verify it shows that the limit has been exceeded*/
@@ -710,10 +774,18 @@ int test_all_cases()
            fclose(fptr);
            printf("\nNote: Please enter any PIN other than %s and check the output\n",s1);
            var = test_pin_change(3);
+           if (var == -2){
            char s[1000];
-           sprintf(s,"\nOUTPUT: 6) TEST CASE PASS: Incorrect password as it has characters/special characters, Expected Output: %d, Output: %d .\n",var,var);
+           sprintf(s,"\nOUTPUT: 6) TEST CASE PASS: Incorrect password as it has characters/special characters/any invalid entries, Expected Output: %d, Output: %d \n",-2,var);
            printf(s);
            fprintf(test_result,s);
+           } else {
+             char s[1000];
+             sprintf(s,"\nOUTPUT: 6) TEST CASE FAIL: You failed to enter characters/special characters as inputs to existingPin, Expected Output: %d, Output: %d .\n",-2,var);
+             printf(s);
+             fprintf(test_result,s);
+
+             }
 
 
            /* Test Case 7: Check the output of the code by entering a non-palindrome 4-digit PIN as input to the new PIN*/
@@ -732,65 +804,93 @@ int test_all_cases()
            var = test_pin_change(3);
            if(var==0){
                char t6[1000];
-               sprintf(t6,"\nOUTPUT: 7) TEST CASE PASS: Valid PIN as it is not a palindrome, Expected Output: %d, Output: %d .\n",var,var);
+               sprintf(t6,"\nOUTPUT: 7) TEST CASE PASS: Valid PIN as it is not a palindrome, Expected Output: %d, Output: %d .\n",0,var);
                printf(t6);
                fprintf(test_result,t6);
-           }
+           } else {
+               char t6[1000];
+               sprintf(t6,"\nOUTPUT: 7) TEST CASE FAIL: You were supposed to input a non-palindrome number , Expected Output: %d, Output: %d .\n",0,var);
+               printf(t6);
+               fprintf(test_result,t6);
+
+             }
            fclose(ft);
            exit(0);
 
 
-            break;
+           break;
 
         case 3:
              printf("\nTesting currency transfer function.\n");
              /* Test case 1: Same account choice for from and to accounts*/
              printf("\n Test case 1: Check the output by giving same account choice for 'From' and 'To' accounts\n");
              var = test_currency_transfer();
-             if (var == -1)
-             {
-                    char t[100];
+             if (var == -1){
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 1) TEST CASE PASS: Invalid choice, Expected Output: %d, Output: %d .\n",-1,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 1) TEST CASE FAIL: You are supposed to give same account choice, Expected Output: %d, Output: %d .\n",-1,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
              printf("\n Test case 2: Check the output by giving invalid account choice that is not shown in the list (for example 'from': 3 and to:'2')  for 'From' and 'To' accounts\n");
              var = test_currency_transfer();
-             if (var == -2)
-             {
-                    char t[100];
+             if (var == -2){
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: The option entered does not exist, Expected Output: %d, Output: %d .\n",-2,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 2) TEST CASE FAIL: You did not enter invalid account choice, Expected Output: %d, Output: %d .\n",-2,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
               printf("\n Test case 3: Check the output by giving negative value/amount greater than current balance of chequing and savings account as input to amount to transfer\n");
               printf("\n Note: 'From' and 'To' account should be different. Assume current balance of chequing and saving is 1000");
               var = test_currency_transfer();
-             if (var == -3)
-             {
+             if (var == -3){
                     char t[1000];
                     sprintf(t,"\nOUTPUT: 3) TEST CASE PASS: No sufficient amount to make transfer, Expected Output: %d, Output: %d .\n",-3,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 3) TEST CASE FAIL: You are supposed to enter insufficient amounts, Expected Output: %d, Output: %d .\n",-3,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
              printf("\n Test case 4: Check the output by giving 0 as input to amount to transfer when two account choices are different valid choices\n");
              var = test_currency_transfer();
-             if (var == -4)
-             {
-                    char t[100];
+             if (var == -4) {
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 4) TEST CASE PASS: 0 is not a valid amount , Expected Output: %d, Output: %d .\n",-4,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 4) TEST CASE FAIL: You failed to enter invalid amount , Expected Output: %d, Output: %d .\n",-4,var);
+                    printf(t);
+                    fprintf(test_result,t);
+
+                }
              printf("\n Test case 5: Check the output by entering a value for 'amount to transfer' lesser than or equal to balance in chequing/savings when two account choices are different valid choices\n");
              var = test_currency_transfer();
-             if (var == -5)
-             {
+             if (var == -5){
                     char t[1000];
                     sprintf(t,"\nOUTPUT: 5) TEST CASE PASS: Value is subtracted from the 'from' acc and added to the 'to' acc , Expected Output: %d, Output: %d .\n",-5,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 5) TEST CASE FAIL: You did not enter a valid value as requested , Expected Output: %d, Output: %d .\n",-5,var);
+                    printf(t);
+                    fprintf(test_result,t);
+              }
              break;
 
         case 4:
@@ -801,32 +901,45 @@ int test_all_cases()
              var = test_withdraw();
              if (var == -1)
              {
-                    char t[100];
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 1) TEST CASE PASS: Insufficient funds , Expected Output: %d, Output: %d .\n",-1,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 1) TEST CASE FAIL: You failed to enter insufficient fund/valid choices , Expected Output: %d, Output: %d .\n",-1,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
 
                /* Test case 2: Check the output by giving the amount to withdraw greater than the daily limit*/
              printf("\n Test case 2: Check the output by entering a value for 'amount to withdraw' greater than the daily limit of 500 when account chosen is a valid choice\n");
              var = test_withdraw();
-             if (var == -2)
-             {
-                    char t[100];
+             if (var == -2) {
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: Daily limit exceeded , Expected Output: %d, Output: %d .\n",-2,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 2) TEST CASE FAIL: Daily limit was not exceeded/ you entered invalid options , Expected Output: %d, Output: %d .\n",-2,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
                /* Test case 3: Check the output by giving amount to withdraw lesser than daily limit*/
                printf("\n Test case 3: Check the output by entering a value for 'amount to withdraw' lesser than or equal to daily Limit of 500 when account chosen is a valid choice\n");
                var = test_withdraw();
-             if (var == -3)
-             {
+             if (var == -3) {
                     char t[1000];
                     sprintf(t,"\nOUTPUT: 3) TEST CASE PASS: Value will be  subtracted from the respective account, Expected Output: %d, Output: %d .\n",-3,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 3) TEST CASE FAIL: You failed to enter the amount as requested, Expected Output: %d, Output: %d .\n",-3,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
              break;
 
         case 5:
@@ -835,49 +948,67 @@ int test_all_cases()
             printf("\n Test case 1: Check the output by giving invalid account choice");
             printf("Note: Assume initial balance in chequing and saving as 1000 each\n");
              var = test_deposit();
-             if (var == -3)
-             {
-                    char t[100];
+             if (var == -3) {
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 1) TEST CASE PASS: Invalid account choice , Expected Output: %d, Output: %d .\n",-3,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 1) TEST CASE FAIL: Invalid choices/entries, Expected Output: %d, Output: %d .\n",-3,var);
+                    printf(t);
+                    fprintf(test_result,t);
+
+               }
 
             /* Test case 2: Check the output by giving invalid payment choice*/
-            printf("\n Test case 2: Check the output by giving invalid payment choice");
+            printf("\n Test case 2: Check the output by giving invalid payment choice but valid account choice");
             printf("Note: Assume initial balance in chequing and saving as 1000 each\n");
              var = test_deposit();
-             if (var == -2)
-             {
-                    char t[100];
+             if (var == -2) {
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: Invalid payment choice , Expected Output: %d, Output: %d .\n",-2,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 2) TEST CASE FAIL: Invalid choices/entries , Expected Output: %d, Output: %d .\n",-2,var);
+                    printf(t);
+                    fprintf(test_result,t);
+
+              }
 
             /* Test case 3: Check the output by depositing any amount to the chequing account*/
              printf("\n Test case 3: Check the output by depositing any amount to the chequing account");
              printf("Note: Assume initial balance in chequing and saving as 1000 each\n");
              var = test_deposit();
-             if (var == 1)
-             {
+             if (var == 1) {
                     char t[1000];
                     sprintf(t,"\nOUTPUT: 3) TEST CASE PASS: Amount will be added to that respective account , Expected Output: %d, Output: %d .\n",1,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 3) TEST CASE FAIL: Invalid entries , Expected Output: %d, Output: %d .\n",1,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
 
             /* Test case 4: Check the output by depositing any amount to the savings account*/
             printf("\n Test case 4: Check the output by depositing any amount to the savings account");
             printf("Note: Assume initial balance in chequing and saving as 1000 each\n");
              var = test_deposit();
-             if (var == -1)
-             {
+             if (var == -1) {
                     char t[1000];
                     sprintf(t,"\nOUTPUT: 4) TEST CASE PASS: Amount will be added to that respective account , Expected Output: %d, Output: %d .\n",-1,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 4) TEST CASE FAIL: Invalid entries , Expected Output: %d, Output: %d .\n",-1,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
              break;
 
         case 6:
@@ -916,20 +1047,30 @@ int test_all_cases()
              printf("\n Check the output by entering invalid bill payments option\n");
              var = test_pay_bill();
              if (var == -1){
-                    char t[100];
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 1) TEST CASE PASS: Invalid bill payment option, Expected Output: %d, Output: %d .\n",-1,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 1) TEST CASE FAIL: Invalid entries, Expected Output: %d, Output: %d .\n",-1,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
              /* Test case 2: Check the output by entering 0 as the value for amount to pay*/
              printf("\n Check the output by giving 0 as the value for amount to pay");
              var = test_pay_bill();
              if (var == -2){
-                    char t[100];
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: Not a valid amount to make payment, Expected Output: %d, Output: %d .\n",-2,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 2) TEST CASE FAIL, Expected Output: %d, Output: %d .\n",-2,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
 
             /* Test case 3: Check the output by entering value for amount lesser than balance in chequing and savings*/
              printf("\n Check the output by entering value for amount to pay lesser than balance in chequing and savings");
@@ -939,7 +1080,12 @@ int test_all_cases()
                     sprintf(t,"\nOUTPUT: 3) TEST CASE PASS: Payment made, Expected Output: %d, Output: %d .\n",-3,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 3) TEST CASE FAIL, Expected Output: %d, Output: %d .\n",-3,var);
+                    printf(t);
+                    fprintf(test_result,t);
+              }
              break;
 
         case 9:
@@ -979,7 +1125,13 @@ int test_all_cases()
                     sprintf(b,"\nOUTPUT: 1) TEST CASE PASS: Function executed successfully, Expected Output: %d, Output: %d .\n",-1,var);
                     printf(b);
                     fprintf(test_result,b);
-            }
+                    } else {
+                        char b[1000];
+                        sprintf(b,"\nOUTPUT: 1) TEST CASE FAIL, Expected Output: %d, Output: %d .\n",-1,var);
+                        printf(b);
+                        fprintf(test_result,b);
+
+                    }
             break;
 
         case 11:
@@ -1027,4 +1179,5 @@ int test_all_cases()
       }
     return 0;
 }
+/* End of test cases execution*/
 

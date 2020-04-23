@@ -10,12 +10,12 @@ Smart Automated Banking Machine (SABM) is a banking software prototype that test
 
 # Installation
 
-Installation steps are mentioned in [INSTALL.md](https://github.com/Soundharyabommi/SABM/tree/master/INSTALL.md)
+Installation steps are mentioned in [INSTALL.md](https://github.com/Soundharyabommi/SABM/blob/master/INSTALL.md)
 
 # Usage
 
 To run, you must first install it. Then you can follow instructions mentioned in
-[User_Manual.md](https://github.com/Soundharyabommi/SABM/tree/master/doc/User_Manual.md).
+[User_Manual.md] (https://github.com/Soundharyabommi/SABM/blob/master/doc/User_Manual.md)
 
 # File Structure
 
@@ -84,11 +84,11 @@ The correct file structure
 
 # For Developers
 
-The developer manual is available [here](https://github.com/Soundharyabommi/SABM/tree/master/doc/Developer_Manual.md).
+The developer manual is available [here] (https://github.com/Soundharyabommi/SABM/blob/master/doc/Developer_Manual.md)
 
 # License
 
-This project is licensed under the GPL 2.0 License - see the LICENSE.md file for details
+This project is licensed under the GNU 3.0 License - see the LICENSE.md file for details
 
 # Acknowledgements
 

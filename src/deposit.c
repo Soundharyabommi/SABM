@@ -7,6 +7,13 @@
 #include "../include/transaction.h"
 #include "../include/switch_statement.h"
 
+/**
+ * @file deposit.c
+ * @brief performs deposit operation and stores the deposit operation done by the user to the file
+ * @param[in] there is no input parameter
+ * @return zero
+ */
+
 int deposit(){
 
     int amountToDeposit;
@@ -48,22 +55,21 @@ int deposit(){
         printf("\nInvalid payment choice");
         deposit();
       }//end of else for payment choice
-        fflush(stdin);
-        fclose(fPtr);
+    fflush(stdin);
+    fclose(fPtr);
     int another_transaction;
     printf("\n Do you want to continue transaction? Press 1 to continue and 2 to exit");
     scanf("%d",&another_transaction);
-    if((another_transaction==1)||(another_transaction==2))
-    {
+    if((another_transaction==1)||(another_transaction==2)){
         if(another_transaction==1){
            int t1=transaction();
            switch_statement(t1);
         } else {
         exit(0);
-        }
+         }
     } else {
-    printf("Invalid choice");
-    exit(0);
+        printf("Invalid choice");
+        exit(0);
       }
     return 0;
 }//end of deposit
