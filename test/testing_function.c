@@ -812,50 +812,72 @@ int test_all_cases()
              /* Test case 1: Same account choice for from and to accounts*/
              printf("\n Test case 1: Check the output by giving same account choice for 'From' and 'To' accounts\n");
              var = test_currency_transfer();
-             if (var == -1)
-             {
-                    char t[100];
+             if (var == -1){
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 1) TEST CASE PASS: Invalid choice, Expected Output: %d, Output: %d .\n",-1,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 1) TEST CASE FAIL: You are supposed to give same account choice, Expected Output: %d, Output: %d .\n",-1,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
              printf("\n Test case 2: Check the output by giving invalid account choice that is not shown in the list (for example 'from': 3 and to:'2')  for 'From' and 'To' accounts\n");
              var = test_currency_transfer();
-             if (var == -2)
-             {
-                    char t[100];
+             if (var == -2){
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: The option entered does not exist, Expected Output: %d, Output: %d .\n",-2,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 2) TEST CASE FAIL: You did not enter invalid account choice, Expected Output: %d, Output: %d .\n",-2,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
               printf("\n Test case 3: Check the output by giving negative value/amount greater than current balance of chequing and savings account as input to amount to transfer\n");
               printf("\n Note: 'From' and 'To' account should be different. Assume current balance of chequing and saving is 1000");
               var = test_currency_transfer();
-             if (var == -3)
-             {
+             if (var == -3){
                     char t[1000];
                     sprintf(t,"\nOUTPUT: 3) TEST CASE PASS: No sufficient amount to make transfer, Expected Output: %d, Output: %d .\n",-3,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 3) TEST CASE FAIL: You are supposed to enter insufficient amounts, Expected Output: %d, Output: %d .\n",-3,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
              printf("\n Test case 4: Check the output by giving 0 as input to amount to transfer when two account choices are different valid choices\n");
              var = test_currency_transfer();
-             if (var == -4)
-             {
-                    char t[100];
+             if (var == -4) {
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 4) TEST CASE PASS: 0 is not a valid amount , Expected Output: %d, Output: %d .\n",-4,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 4) TEST CASE FAIL: You failed to enter invalid amount , Expected Output: %d, Output: %d .\n",-4,var);
+                    printf(t);
+                    fprintf(test_result,t);
+
+                }
              printf("\n Test case 5: Check the output by entering a value for 'amount to transfer' lesser than or equal to balance in chequing/savings when two account choices are different valid choices\n");
              var = test_currency_transfer();
-             if (var == -5)
-             {
+             if (var == -5){
                     char t[1000];
                     sprintf(t,"\nOUTPUT: 5) TEST CASE PASS: Value is subtracted from the 'from' acc and added to the 'to' acc , Expected Output: %d, Output: %d .\n",-5,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 5) TEST CASE FAIL: You did not enter a valid value as requested , Expected Output: %d, Output: %d .\n",-5,var);
+                    printf(t);
+                    fprintf(test_result,t);
+              }
              break;
 
         case 4:
@@ -866,7 +888,7 @@ int test_all_cases()
              var = test_withdraw();
              if (var == -1)
              {
-                    char t[100];
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 1) TEST CASE PASS: Insufficient funds , Expected Output: %d, Output: %d .\n",-1,var);
                     printf(t);
                     fprintf(test_result,t);
