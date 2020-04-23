@@ -758,8 +758,6 @@ int test_all_cases()
                sprintf(t5,"\nOUTPUT: 5) TEST CASE FAIL: You are supposed to enter palindrome, Expected Output: %d, Output: %d .\n",-4,var);
                printf(t5);
                fprintf(test_result,t5);
-
-
              }
 
 
@@ -907,28 +905,41 @@ int test_all_cases()
                     sprintf(t,"\nOUTPUT: 1) TEST CASE PASS: Insufficient funds , Expected Output: %d, Output: %d .\n",-1,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 1) TEST CASE FAIL: You failed to enter insufficient fund/valid choices , Expected Output: %d, Output: %d .\n",-1,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
 
                /* Test case 2: Check the output by giving the amount to withdraw greater than the daily limit*/
              printf("\n Test case 2: Check the output by entering a value for 'amount to withdraw' greater than the daily limit of 500 when account chosen is a valid choice\n");
              var = test_withdraw();
-             if (var == -2)
-             {
-                    char t[100];
+             if (var == -2) {
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: Daily limit exceeded , Expected Output: %d, Output: %d .\n",-2,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 2) TEST CASE FAIL: Daily limit was not exceeded/ you entered invalid options , Expected Output: %d, Output: %d .\n",-2,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
                /* Test case 3: Check the output by giving amount to withdraw lesser than daily limit*/
                printf("\n Test case 3: Check the output by entering a value for 'amount to withdraw' lesser than or equal to daily Limit of 500 when account chosen is a valid choice\n");
                var = test_withdraw();
-             if (var == -3)
-             {
+             if (var == -3) {
                     char t[1000];
                     sprintf(t,"\nOUTPUT: 3) TEST CASE PASS: Value will be  subtracted from the respective account, Expected Output: %d, Output: %d .\n",-3,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 3) TEST CASE FAIL: You failed to enter the amount as requested, Expected Output: %d, Output: %d .\n",-3,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
              break;
 
         case 5:
@@ -1081,7 +1092,7 @@ int test_all_cases()
                     sprintf(b,"\nOUTPUT: 1) TEST CASE PASS: Function executed successfully, Expected Output: %d, Output: %d .\n",-1,var);
                     printf(b);
                     fprintf(test_result,b);
-            }
+                    }
             break;
 
         case 11:
