@@ -224,3 +224,11 @@ OUTPUT: 4) TEST CASE PASS: 0 is not a valid amount , Expected Output: -4, Output
 OUTPUT: 1) TEST CASE PASS: Invalid choice, Expected Output: -1, Output: -1 .
 
 OUTPUT: 2) TEST CASE PASS: The option entered does not exist, Expected Output: -2, Output: -2 .
+
+OUTPUT: 1) TEST CASE FAIL: Invalid choices/entries, Expected Output: -3, Output: 1 .
+
+OUTPUT: 2) TEST CASE PASS: Invalid payment choice , Expected Output: -2, Output: -2 .
+
+OUTPUT: 3) TEST CASE PASS: Amount will be added to that respective account , Expected Output: 1, Output: 1 .
+
+OUTPUT: 4) TEST CASE FAIL: Invalid entries , Expected Output: -1, Output: -2 .

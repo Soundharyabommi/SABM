@@ -948,49 +948,67 @@ int test_all_cases()
             printf("\n Test case 1: Check the output by giving invalid account choice");
             printf("Note: Assume initial balance in chequing and saving as 1000 each\n");
              var = test_deposit();
-             if (var == -3)
-             {
-                    char t[100];
+             if (var == -3) {
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 1) TEST CASE PASS: Invalid account choice , Expected Output: %d, Output: %d .\n",-3,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 1) TEST CASE FAIL: Invalid choices/entries, Expected Output: %d, Output: %d .\n",-3,var);
+                    printf(t);
+                    fprintf(test_result,t);
+
+               }
 
             /* Test case 2: Check the output by giving invalid payment choice*/
-            printf("\n Test case 2: Check the output by giving invalid payment choice");
+            printf("\n Test case 2: Check the output by giving invalid payment choice but valid account choice");
             printf("Note: Assume initial balance in chequing and saving as 1000 each\n");
              var = test_deposit();
-             if (var == -2)
-             {
-                    char t[100];
+             if (var == -2) {
+                    char t[1000];
                     sprintf(t,"\nOUTPUT: 2) TEST CASE PASS: Invalid payment choice , Expected Output: %d, Output: %d .\n",-2,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 2) TEST CASE FAIL: Invalid choices/entries , Expected Output: %d, Output: %d .\n",-2,var);
+                    printf(t);
+                    fprintf(test_result,t);
+
+              }
 
             /* Test case 3: Check the output by depositing any amount to the chequing account*/
              printf("\n Test case 3: Check the output by depositing any amount to the chequing account");
              printf("Note: Assume initial balance in chequing and saving as 1000 each\n");
              var = test_deposit();
-             if (var == 1)
-             {
+             if (var == 1) {
                     char t[1000];
                     sprintf(t,"\nOUTPUT: 3) TEST CASE PASS: Amount will be added to that respective account , Expected Output: %d, Output: %d .\n",1,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 3) TEST CASE FAIL: Invalid entries , Expected Output: %d, Output: %d .\n",1,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
 
             /* Test case 4: Check the output by depositing any amount to the savings account*/
             printf("\n Test case 4: Check the output by depositing any amount to the savings account");
             printf("Note: Assume initial balance in chequing and saving as 1000 each\n");
              var = test_deposit();
-             if (var == -1)
-             {
+             if (var == -1) {
                     char t[1000];
                     sprintf(t,"\nOUTPUT: 4) TEST CASE PASS: Amount will be added to that respective account , Expected Output: %d, Output: %d .\n",-1,var);
                     printf(t);
                     fprintf(test_result,t);
-             }
+             } else {
+                    char t[1000];
+                    sprintf(t,"\nOUTPUT: 4) TEST CASE FAIL: Invalid entries , Expected Output: %d, Output: %d .\n",-1,var);
+                    printf(t);
+                    fprintf(test_result,t);
+               }
              break;
 
         case 6:
