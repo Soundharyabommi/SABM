@@ -2,3 +2,7 @@ Amount to withdraw = 100Balance in chequing = 900.000000
 Amount deposited=50
 Amount transferred=10 and The current balance of chequing account is 940.000000 and saving account is 1010.000000
 Amount paid for bill = 50 and Balance in chequing = 950.000000
+Amount to withdraw = 45Balance in chequing = 955.000000
+Amount deposited=45
+Amount transferred=45 and The current balance of chequing account is 955.000000 and saving account is 1045.000000
+Amount paid for bill = 12 andBalance in savings = 988.000000
