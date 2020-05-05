@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-#include <ctype.h>
+//#include <ctype.h>
 #include "../include/pin_init.h"
 #include "../include/global.h"
 
@@ -24,26 +24,35 @@ int pin_init(int counter)
         printf("\nEnter your 4-DIGIT PIN: ");
         //scanf("%s",&PIN);
         gets(PIN);
+        
         a=atoi(PIN);
         FILE *fPtr;
-        fPtr=fopen("../datafolder/password.txt","r");
+        fPtr=fopen("datafolder/password.txt","r");
         if(fPtr==NULL){
         printf("not exist");
         exit(EXIT_FAILURE);
         }
         while(fgets(string,1024,fPtr))
         {
-            b=atoi(string);
+          
+           b=atoi(string);
         }
         //char asci[]="1234";
-        int pincmp; //=strcmp(PIN,"1234");
+        
+        //printf("%d\n", b);
+        //printf("%d\n", a);
+        //int pincmp; //=strcmp(PIN,"1234");
+        //if(strcmp(PIN,b)) 
+           //printf("%d\n", a);
+           //printf("%d\n", b);
         if(a==b)
-            pincmp=0;
-        if(pincmp==0){
-            printf("\nCorrect password");
-            counter = 4;}
-        else{
-            printf("\nInCorrect password\n");
+           {  
+           printf("\nCorrect password");
+           counter=4;
+           }
+        else if(a!=b)
+            {
+            printf("\nInCorrect password");
             counter--;
             if(counter==0){
                 printf("\nSorry, You have exceeded the number of times that you need to input the correct password");
