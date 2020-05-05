@@ -22,7 +22,7 @@ int test_pin_init(int counter){
         //fgetc(stdin);
         a=atoi(PIN);
         FILE *fPtr;
-        fPtr=fopen("../datafolder/password.txt","r");
+        fPtr=fopen("datafolder/password.txt","r");
         if(fPtr==NULL){
         printf("not exist");
         exit(EXIT_FAILURE);
@@ -31,14 +31,14 @@ int test_pin_init(int counter){
             b=atoi(string);
         }
         //char asci[]="1234";
-        int pincmp; //=strcmp(PIN,"1234");
+        //int pincmp; //=strcmp(PIN,"1234");
         if(a==b)
-            pincmp=0;
-        if(pincmp==0){
-            printf("\nCorrect password");
-            counter = 4;
+           {
+            printf("\n Correct password \n");
+            counter=4;
             return -1;
-        } else {
+           }
+        else if(a!=b){
             printf("\nInCorrect password\n");
             counter--;
             if(counter==0){
@@ -61,7 +61,7 @@ int test_pin_change(int attempt)
     FILE *fPtr;
     char string[1024];
     int a,b;
-    fPtr=fopen("../datafolder/password.txt","r"); //opening file to check if the existing pin entered by the user matches the old pin stored in a file
+    fPtr=fopen("datafolder/password.txt","r"); //opening file to check if the existing pin entered by the user matches the old pin stored in a file
     if(attempt<=3){
         char existingPin[5];
         printf("Please enter your existing PIN:");
@@ -73,7 +73,7 @@ int test_pin_change(int attempt)
                 b=atoi(string);
         }
         fclose(fPtr);
-        fPtr=fopen("../datafolder/password.txt","r+");
+        fPtr=fopen("datafolder/password.txt","r+");
         int existingPinCmp;
         if(a==b){
                existingPinCmp=0;
@@ -151,7 +151,7 @@ int test_pin_change(int attempt)
      int toAccountChoice;
      FILE *fPtr;
     //mkdir("c:\\cfile");
-     fPtr=fopen("../datafolder/data.txt","a");
+     fPtr=fopen("datafolder/data.txt","a");
      if(fPtr==NULL){
         printf("not exist");
         exit(EXIT_FAILURE);
@@ -209,7 +209,7 @@ int test_pin_change(int attempt)
         printf("\nPlease enter a valid choice");
         return -2;
       }
-      fflush(stdin);
+      //fflush(stdin);
       fclose(fPtr);
 
 
@@ -222,7 +222,7 @@ int test_withdraw()
     float dailyLimit =500;
     FILE *fPtr;
     //mkdir("c:\\cfile");
-    fPtr=fopen("../datafolder/data.txt","a");
+    fPtr=fopen("datafolder/data.txt","a");
     if(fPtr==NULL){
         printf("not exist");
         exit(EXIT_FAILURE);
@@ -287,7 +287,7 @@ int test_withdraw()
         printf("\n Invalid account choice");
         test_withdraw();
     }// end of else for choice
-    fflush(stdin);
+    //fflush(stdin);
     fclose(fPtr);
 	return 0;
     }//end of withdraw
@@ -308,7 +308,7 @@ int test_deposit(){
     int amountToDeposit;
     FILE *fPtr;
     //mkdir("c:\\cfile");
-    fPtr=fopen("../datafolder/data.txt","a");
+    fPtr=fopen("datafolder/data.txt","a");
     if(fPtr==NULL){
         printf("not exist");
         exit(EXIT_FAILURE);
@@ -348,7 +348,7 @@ int test_deposit(){
         //deposit();
         return -2;
       }//end of else for payment choice
-        fflush(stdin);
+        //fflush(stdin);
         fclose(fPtr);
     return 0;
 }//end of deposit
@@ -372,7 +372,7 @@ int test_transaction_history(){
             printf("%s",str);
     }
     printf("\n**************No more transactions to show****************************************\n");
-    fflush(fhr);
+    //fflush(fhr);
     fclose(fhr);*/
    return -1;
 }
@@ -386,7 +386,7 @@ int test_pay_bill()
     scanf("%d",&choice);
     FILE *fPtr;
     //mkdir("c:\\cfile");
-    fPtr=fopen("../datafolder/data.txt","a");
+    fPtr=fopen("datafolder/data.txt","a");
     if(fPtr==NULL){
         printf("not exist");
         exit(EXIT_FAILURE);
@@ -436,7 +436,7 @@ int test_pay_bill()
      printf("\nInvalid Choice");
      return -1;
        }
-       fflush(stdin);
+       //fflush(stdin);
        fclose(fPtr);
 
        return 0;
@@ -537,7 +537,7 @@ int test_currency_exchange( int cash,char *type)
 int test_all_cases()
 {
     int var,inp;
-    FILE *test_result = fopen("../test/results/results.csv", "a");
+    FILE *test_result = fopen("test/results/results.csv", "a");
     printf("\n1. Test pin init function");
     printf("\n2. Test pin change function");
     printf("\n3. Test currency transfer function");
@@ -610,13 +610,13 @@ int test_all_cases()
           printf("\nINPUT: Test case 4: Check the output by entering the right password as input to the PIN. The program should display Correct password\n");
           printf("\nHint: Please check the file password.txt for the PIN and enter it right to check the output.");
           FILE *fPtr;
-          fPtr=fopen("../datafolder/password.txt","r");
+          fPtr=fopen("datafolder/password.txt","r");
           char str[100];
           while(fgets(str,100,fPtr)!=NULL)
            {
             printf("\nThe PIN stored in file is %s",str);
            }
-           fflush(fPtr);
+           //fflush(fPtr);
            fclose(fPtr);
           int var3 = test_pin_init(3);
           if (var3 == -1) {
@@ -686,13 +686,13 @@ int test_all_cases()
             /* Test case 3: Check the output by giving invalid inputs to the existing pin more than 3 times and verify it shows that the limit has been exceeded*/
            printf("\nINPUT: Test case 3: Check the output by giving invalid inputs to the existing pin for 3 times and verify it shows that the limit has exceeded after the third attempt\n");
            FILE *fPr;
-           fPr=fopen("../datafolder/password.txt","r");
+           fPr=fopen("datafolder/password.txt","r");
            char str1[100];
            while(fgets(str1,100,fPr)!=NULL)
            {
             printf("\nThe existing PIN stored in file is %s",str1);
            }
-           fflush(fPr);
+           //fflush(fPr);
            fclose(fPr);
            printf("\nNote: Please enter any PIN other than %s and check the output\n",str1);
            var = test_pin_change(3);
@@ -712,13 +712,13 @@ int test_all_cases()
            printf("\nINPUT:Test case 4: Check the output by entering a new PIN having a password length lesser than/greater than 4-digits");
            printf("\nPlease note that any number of zeros in the beginning of password will not be counted as a digit\n");
            FILE *fp;
-           fp=fopen("../datafolder/password.txt","r");
+           fp=fopen("datafolder/password.txt","r");
            char str2[100];
            while(fgets(str2,100,fp)!=NULL)
            {
             printf("\nThe existing PIN stored in file is %s\n",str2);
            }
-           fflush(fp);
+           //fflush(fp);
            fclose(fp);
            printf("\nNOTE: Please enter existing PIN right in order to get a chance to set your new password\n");
            var = test_pin_change(3);
@@ -737,13 +737,13 @@ int test_all_cases()
            printf("\nINPUT: Test Case 5: Check the output by entering any palindrome 4-digit number (like for example 1001) as input to the new PIN");
            printf("\nPlease note that any number of zeros in the beginning of password will not be counted as a digit\n");
            FILE *fr;
-           fr=fopen("../datafolder/password.txt","r");
+           fr=fopen("datafolder/password.txt","r");
            char str3[100];
            while(fgets(str3,100,fr)!=NULL)
            {
             printf("\nThe existing PIN stored in file is %s\n",str3);
            }
-           fflush(fr);
+           //fflush(fr);
            fclose(fr);
            printf("\nNOTE: Please enter existing PIN right in order to get a chance to set your new password.\n");
            var = test_pin_change(3);
@@ -763,13 +763,13 @@ int test_all_cases()
            /* Test case 6: Check the output by giving invalid inputs to the existing pin more than 3 times and verify it shows that the limit has been exceeded*/
            printf("\nINPUT: Test case 6: Check the output by giving invalid inputs like characters/specials character to the existing pin for 3 times and verify it shows that the limit has exceeded after the third attempt\n");
            FILE *fptr;
-           fptr=fopen("../datafolder/password.txt","r");
+           fptr=fopen("datafolder/password.txt","r");
            char s1[100];
            while(fgets(s1,100,fptr)!=NULL)
            {
             printf("\nThe existing PIN stored in file is %s",s1);
            }
-           fflush(fptr);
+           //fflush(fptr);
            fclose(fptr);
            printf("\nNote: Please enter any PIN other than %s and check the output\n",s1);
            var = test_pin_change(3);
@@ -791,7 +791,7 @@ int test_all_cases()
            printf("\nINPUT: Test Case 7: Check the output by entering a non-palindrome 4-digit PIN (like for example 1000) as input to the new PIN\n");
            printf("\nPlease note that any number of zeros in the beginning of password will not be counted as a digit\n");
            FILE *ft;
-           ft = fopen("../datafolder/password.txt","r");
+           ft = fopen("datafolder/password.txt","r");
            char str4[100];
            while(fgets(str4,100,ft)!=NULL)
            {
@@ -1043,7 +1043,7 @@ int test_all_cases()
              printf("\n Testing bill payment function");
              /* Test case 1: Check whether the bill payment choices are valid*/
 
-             printf("\n Check the output by entering invalid bill payments option\n");
+             printf("\n Test case 1: Check the output by entering invalid bill payments option\n");
              var = test_pay_bill();
              if (var == -1){
                     char t[1000];
@@ -1057,7 +1057,7 @@ int test_all_cases()
                     fprintf(test_result,t);
                }
              /* Test case 2: Check the output by entering 0 as the value for amount to pay*/
-             printf("\n Check the output by giving 0 as the value for amount to pay");
+             printf("\nTest case 2:Check the output by giving 0 as the value for amount to pay");
              var = test_pay_bill();
              if (var == -2){
                     char t[1000];
@@ -1072,7 +1072,7 @@ int test_all_cases()
                }
 
             /* Test case 3: Check the output by entering value for amount lesser than balance in chequing and savings*/
-             printf("\n Check the output by entering value for amount to pay lesser than balance in chequing and savings");
+             printf("\nTest case 3: Check the output by entering value for amount to pay lesser than balance in chequing and savings");
              var = test_pay_bill();
              if (var == -3){
                     char t[1000];
@@ -1102,7 +1102,7 @@ int test_all_cases()
         case 10:
             printf("\n Testing Currency exchange function");
             /*Test case 1: Check whether 5000 cad has been converted to INR and output is as expected*/
-           printf("\n Check whether 5000 cad has been converted to desired currency and output is the expected one");
+           printf("\nTest case 1: Check whether 5000 cad has been converted to desired currency and output is the expected one");
            printf("\nNote please enter as a string and use CAPS LOCK and not a number. For example if cad enter CAD");
            char curr[4];
            int amt;

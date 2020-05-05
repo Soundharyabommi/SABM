@@ -23,6 +23,7 @@ INCTESTDIR	 = test/include
 
 CC       = gcc
 # compiling flags here
+LM = -lm
 CFLAGS   = -Wall
 
 INC      := -I$(INCDIR) -I$(INCTESTDIR)
@@ -34,16 +35,18 @@ rm       = rm -f
 
 $(BINDIR)/$(TARGET): $(OBJECTS1) $(OBJECTS2)
 	@mkdir -p $(BINDIR)
-	@$(CC) $(OBJECTS1) $(OBJECTS2) -o $@
+
+	@$(CC) $(OBJECTS1) $(OBJECTS2) -o $@ $(LM) 
 	@echo "Linking complete!"
 
 $(OBJECTS1): $(OBJDIR)/%.o : $(SRCDIR)/%.c
 	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@ $(LM) 
 	@echo "Compiled "$<" successfully!"
 
 $(OBJECTS2): $(OBJDIR)/%.o : $(SRCTESTDIR)/%.c
-	@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INC) -c $< -o $@ $(LM)  
 	@echo "Compiled "$<" successfully!"
 
 .PHONY: clean
