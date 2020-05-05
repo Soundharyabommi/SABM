@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-#include<ctype.h>
+//#include<ctype.h>
 #include<math.h>
 #include<stdlib.h>
 #include "../include/pin_change.h"
@@ -22,7 +22,7 @@ int pin_change(int attempt)
     FILE *fPtr;
     char string[1024];
     int a,b;
-    fPtr=fopen("../datafolder/password.txt","r"); //opening file to check if the existing pin entered by the user matches the old pin stored in a file
+    fPtr=fopen("datafolder/password.txt","r"); //opening file to check if the existing pin entered by the user matches the old pin stored in a file
     if(attempt<=3){
          char existingPin[5];
          printf("Please enter your existing PIN:");
@@ -32,7 +32,7 @@ int pin_change(int attempt)
          b=atoi(string);
          }
      fclose(fPtr);
-     fPtr=fopen("../datafolder/password.txt","r+");
+     fPtr=fopen("datafolder/password.txt","r+");
      int existingPinCmp;
      if(a==b) {
          existingPinCmp=0;

@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
-#include<ctype.h>
+//#include<ctype.h>
 #include<string.h>
 #include "../include/functions.h"
 #include "../include/switch_statement.h"

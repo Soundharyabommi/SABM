@@ -15,7 +15,7 @@ void transaction_history(){
     printf("\nYour recent transactions:\n");
     char str[100];
     //mkdir("c:\\cfile");
-    fpr=fopen("../datafolder/data.txt","r");
+    fpr=fopen("datafolder/data.txt","r");
      //open the file to display the contents
     //the file will contain the history of withdrawal and deposit made
     if(fpr==NULL){

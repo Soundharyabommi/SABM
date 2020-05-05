@@ -22,7 +22,7 @@ int pay_bill()
     scanf("%d",&choice);
     FILE *fPtr;
     //mkdir("c:\\cfile");
-    fPtr=fopen("../datafolder/data.txt","a");
+    fPtr=fopen("datafolder/data.txt","a");
     if(fPtr==NULL){
         printf("not exist");
         exit(EXIT_FAILURE);
@@ -67,7 +67,7 @@ int pay_bill()
      } else {
      printf("\nInvalid Choice");
        }
-    fflush(stdin);
+    //fflush(stdin);
     fclose(fPtr);
     int another_transaction;
     printf("\n Do you want to continue transaction? Press 1 to continue and 2 to exit");

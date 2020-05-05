@@ -18,7 +18,7 @@ int deposit(){
     int amountToDeposit;
     FILE *fPtr;
     //mkdir("c:\\cfile");
-    fPtr=fopen("../datafolder/data.txt","a");
+    fPtr=fopen("datafolder/data.txt","a");
     if(fPtr==NULL){
         printf("not exist");
         exit(EXIT_FAILURE);
